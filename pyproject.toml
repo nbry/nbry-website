@@ -17,7 +17,19 @@ dev = [
   "pyright>=1.1.409",
   "pytest>=9.0.3",
   "ruff>=0.15.13",
+  "uvicorn>=0.47.0",
 ]
 
 [project.scripts]
-my-script = "nbry_lifting_website.app:main"
+my-script = "nbry_lifting_website.app:app"
+
+[build-system]
+build-backend = "hatchling.build"
+requires = ["hatchling"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/nbry_lifting_website"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py314"
