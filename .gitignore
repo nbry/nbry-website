@@ -8,3 +8,8 @@ wheels/
 
 # Virtual environments
 .venv
+
+# Other generated files
+.ruff_cache/
+*.log
+*.tmp
