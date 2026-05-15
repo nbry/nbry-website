@@ -7,5 +7,14 @@
   "useTabs": false,
   "arrowParens": "always",
   "htmlWhitespaceSensitivity": "css",
-  "endOfLine": "lf"
+  "endOfLine": "lf",
+  "plugins": ["prettier-plugin-jinja-template"],
+  "overrides": [
+    {
+      "files": "*.html",
+      "options": {
+        "parser": "jinja-template"
+      }
+    }
+  ]
 }

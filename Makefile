@@ -7,4 +7,4 @@ lint:
 format:
 	uv run ruff check --fix .
 	uv run ruff format .
-	npx prettier --write "src/**/*.{html,css}"
+	npx prettier@latest --plugin=prettier-plugin-jinja-template --parser=jinja-template --write "src/**/*.html"
