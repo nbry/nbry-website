@@ -7,3 +7,4 @@ lint:
 format:
 	uv run ruff check --fix .
 	uv run ruff format .
+	npx prettier --write "src/**/*.{html,css}"
