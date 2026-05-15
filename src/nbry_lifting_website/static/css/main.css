@@ -14,8 +14,8 @@
   --color-focus: #0066cc;
 
   /* Typography */
-  --font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, sans-serif;
+  --font-family-base:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --font-family-mono: "Courier New", monospace;
   --font-size-base: 16px;
   --font-size-sm: 14px;
@@ -69,7 +69,8 @@ body {
   line-height: var(--line-height-base);
   color: var(--color-text);
   background-color: var(--color-bg);
-  transition: background-color var(--transition-base),
+  transition:
+    background-color var(--transition-base),
     color var(--transition-base);
 }
 
@@ -170,10 +171,11 @@ main {
 header {
   background-color: var(--color-bg-secondary);
   border-bottom: 1px solid var(--color-border);
-  padding: var(--space-lg) var(--space-md);
+  padding: var(--space-md) var(--space-md);
   position: sticky;
   top: 0;
   z-index: 50;
+  position: relative;
 }
 
 .header-container {
@@ -199,9 +201,10 @@ nav {
 }
 
 nav a {
-  padding: var(--space-sm) var(--space-md);
+  padding: var(--space-xs) var(--space-md);
   border-radius: 4px;
-  transition: background-color var(--transition-base),
+  transition:
+    background-color var(--transition-base),
     color var(--transition-base);
 }
 
@@ -236,6 +239,33 @@ nav a:focus {
 .theme-toggle:focus {
   outline: 2px solid var(--color-focus);
   outline-offset: 2px;
+}
+
+/* ========================================
+   Navigation Toggle (Mobile Hamburger)
+   ======================================== */
+
+.nav-toggle {
+  display: none;
+}
+
+.nav-label {
+  display: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  padding: var(--space-sm);
+  border-radius: 4px;
+  transition: background-color var(--transition-base);
+}
+
+.nav-label:hover {
+  background-color: var(--color-border);
+}
+
+.header-controls {
+  display: flex;
+  gap: var(--space-sm);
+  align-items: center;
 }
 
 /* ========================================
@@ -319,10 +349,62 @@ footer {
    Responsive Design (Mobile-First)
    ======================================== */
 
+/* Mobile: max-width 767px */
+@media (max-width: 767px) {
+  .nav-label {
+    display: block;
+  }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--color-bg-secondary);
+    border-bottom: 1px solid var(--color-border);
+    gap: 0;
+    z-index: 40;
+  }
+
+  nav a {
+    padding: var(--space-md);
+    border-radius: 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  nav a:last-child {
+    border-bottom: none;
+  }
+
+  .nav-toggle:checked ~ nav {
+    display: flex;
+  }
+}
+
 /* Tablet breakpoint: 768px */
 @media (min-width: 768px) {
   :root {
     --font-size-base: 17px;
+  }
+
+  .nav-label {
+    display: none;
+  }
+
+  nav {
+    display: flex !important;
+    position: static;
+    flex-direction: row;
+    background-color: transparent;
+    border-bottom: none;
+    gap: var(--space-lg);
+  }
+
+  nav a {
+    padding: var(--space-sm) var(--space-lg);
+    border-bottom: none;
   }
 
   h1 {
@@ -343,14 +425,6 @@ footer {
 
   .header-container {
     margin-bottom: var(--space-lg);
-  }
-
-  nav {
-    gap: var(--space-lg);
-  }
-
-  nav a {
-    padding: var(--space-sm) var(--space-lg);
   }
 }
 

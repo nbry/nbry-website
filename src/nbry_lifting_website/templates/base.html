@@ -12,10 +12,14 @@
     <header>
       <div class="header-container">
         <h1>NBRY Lifting</h1>
-        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode" type="button">
-          🌙
-        </button>
+        <div class="header-controls">
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode" type="button">
+            🌙
+          </button>
+          <label for="nav-toggle" class="nav-label" aria-label="Toggle navigation menu">☰</label>
+        </div>
       </div>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" />
       <nav aria-label="Main navigation">
         <a href="/">Home</a>
         <a href="/instructions">Instructions</a>
