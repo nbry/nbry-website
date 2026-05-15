@@ -1,5 +1,90 @@
 {% extends "base.html" %}
-{% block title %}Instructions{% endblock %}
+
+{% block title %}Instructions - NBRY Lifting{% endblock %}
+
 {% block content %}
-<h2>Instructions</h2>
+<div class="content">
+  <h2>About</h2>
+  <p>This page tells us how to use this spreadsheet</p>
+
+  <h2>Suggestions</h2>
+  <h3>Weekly Structure</h3>
+  <p>Day 1 and Day 2 should be consecutive days. Rest between Day 2 and 3. Day 3 and 4 should be consecutive days.</p>
+  <p><em>Example: Mon (D1), Tue (D2), Wed (REST), Thu (D3), Fri (D4), Sat & Sun (REST)</em></p>
+
+  <h3>How to set an initial Training Max</h3>
+  <p>If you know what your 1 rep max (1RM) is, enter your 1RM * 0.9 as your training max.</p>
+  <p>This program is designed for intermediate lifters who have at least some exposure to these lifts. If you cannot provide an estimate, I would recommend trying a beginner's powerlifting program for a couple weeks to learn more about your level with these exercises (e.g. Stronglifts 5x5, Starting Strength etc.).</p>
+
+  <h3>How to set Target Weights and Reps for the secondary and tertiary exercises</h3>
+  <p>If you have never done the exercise before, I would google "Suggested starting weight for &lt;exercise&gt; for a beginner" and put those in. It might help to enter your gender, age, and weight for a better estimate. Use that value as a baseline, and you can adjust as necessary after you try the exercises out.</p>
+  <p>If you have done the exercises before, use your best judgment based on the suggested rep range.</p>
+
+  <h2>Progression Rules</h2>
+  <p>After completing a 5-week cycle, use the rules below to decide how to progress:</p>
+
+  <h3>1. Primary Lifts (Training Max–Based)</h3>
+  <p>Primary lifts (e.g., Squat, Bench, Deadlift, OHP) use a Training Max (TM).</p>
+  <p>A Training Max is a conservative reference weight—not your true 1RM. It's intentionally set lower so your percentages stay consistent and sustainable across cycles, rather than being based on a fluctuating or overestimated max.</p>
+  <p><strong>Progression rule:</strong></p>
+  <ul>
+    <li>If you successfully complete all prescribed reps for the cycle → increase your TM by the set increment for the next cycle.</li>
+    <li>All future working weights will automatically adjust based on this new TM.</li>
+  </ul>
+  <p><strong>Example:</strong></p>
+  <ul>
+    <li>Current TM (Squat): 290 lbs</li>
+    <li>You complete all reps for the cycle</li>
+    <li>Increment: +10 lbs</li>
+    <li>→ New TM = 300 lbs</li>
+    <li>→ Next cycle's squat weights increase accordingly</li>
+  </ul>
+
+  <h3>2. Secondary & Tertiary Lifts (Fixed Weight + Rep Targets)</h3>
+  <p>These lifts (e.g., rows, curls, lateral raises) use a double progression system: reps first, then weight.</p>
+  <p><strong>Progression rule:</strong></p>
+  <ol>
+    <li>If you complete most or all prescribed reps → increase reps by 1 next cycle</li>
+    <li>Continue increasing reps until you reach the top of the target range</li>
+    <li>Once you hit the top of the range → increase weight and reset reps to the bottom of the range</li>
+  </ol>
+  <p><strong>Example:</strong></p>
+  <ul>
+    <li>Increment: 5 lb</li>
+    <li>Target range: 8–12 reps</li>
+    <li>Current Target Reps: 3 sets of 10 reps</li>
+    <li>Current Target Weight: 50 lb</li>
+  </ul>
+  <p><strong>Cycle progression:</strong></p>
+  <ul>
+    <li>Next cycle → 50 lb, 3×11</li>
+    <li>Then → 50 lb, 3×12</li>
+    <li>Then → 55 lb, 3×8</li>
+  </ul>
+
+  <h3>3. Percentage-Based Secondary Lifts (Linked to Primary Lifts)</h3>
+  <p>Some lifts (e.g., DB Bench, RDL) are calculated as a percentage of a primary lift (e.g., Bench, Deadlift). As you make progress on those the primary lifts, your secondary lifts will automatically adjust accordingly.</p>
+
+  <h2>What if you fail a set or miss reps?</h2>
+  <p>Failure is expected at times and is part of the progression process.</p>
+  <p>To keep things simple for tertiary (and some secondary hypertrophy) lifts, all sets share the same target reps. This means you are not adjusting reps within a workout (e.g., 10, 9, 8). Instead, the goal is:</p>
+  <p><em>"Every set aims to hit the same target (e.g., 3×10)"</em></p>
+  <p><strong>Progression rule:</strong></p>
+  <p><em>"If you miss reps → repeat the same weight and target reps next cycle"</em></p>
+  <p><strong>Example:</strong></p>
+  <ul>
+    <li>Target: 3×10</li>
+    <li>What you managed to do: 10, 9, 8</li>
+    <li>→ Do not adjust to 10/9/8 next time</li>
+    <li>→ Instead, repeat 3×10 next cycle and aim to complete it</li>
+  </ul>
+
+  <h2>When should you decrease weight?</h2>
+  <p>While most failures should simply be retried, there are cases where reducing weight is appropriate:</p>
+  <ol>
+    <li><strong>Initial setup is too aggressive:</strong> If you're missing reps by a wide margin (e.g., target 10, but hitting 6–7), your starting weight is likely too high.</li>
+    <li><strong>Repeated failure across multiple cycles:</strong> If you fail the same lift for 2–3 consecutive cycles without improvement, it may indicate the load is unsustainably high.</li>
+    <li><strong>Form breakdown or excessive fatigue:</strong> If reps are being completed with poor form or recovery is clearly compromised, lowering the weight is the better long-term decision.</li>
+  </ol>
+</div>
 {% endblock %}
