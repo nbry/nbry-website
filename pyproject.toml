@@ -33,3 +33,6 @@ packages = ["src/nbry_lifting_website"]
 [tool.ruff]
 line-length = 88
 target-version = "py314"
+
+[tool.ruff.lint]
+select = ["I"] # Enable isort rules

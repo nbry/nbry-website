@@ -13,3 +13,6 @@ wheels/
 .ruff_cache/
 *.log
 *.tmp
+
+# Personal directory
+.project/
