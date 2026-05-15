@@ -1,19 +1,23 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        {% block title %}Home{% endblock %}
-    </title>
-</head>
-<body>
-    <header><h1>Welcome to NBRY Lifting</h1></header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}Home{% endblock %}</title>
+  </head>
+  <body>
+    <header>
+      <h1>NBRY Lifting</h1>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/instructions">Instructions</a>
+        <a href="/faq">FAQ</a>
+        <a href="/resources">Resources</a>
+        <a href="/links">Links</a>
+        <a href="/changelog">Changelog</a>
+      </nav>
+    </header>
 
-    <div id="content">
-        {% block content %}
-        {% endblock %}
-    </div>
-
-</body>
+    <div id="content">{% block content %} {% endblock %}</div>
+  </body>
 </html>
