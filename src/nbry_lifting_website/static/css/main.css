@@ -2,7 +2,7 @@
    CSS Custom Properties (Theme Variables)
    ======================================== */
 
-@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600;700&display=swap");
 
 :root {
   /* Colors - Dark IDE Theme */
@@ -26,8 +26,8 @@
   --color-syntax-class: #ef4444;
 
   /* Typography */
-  --font-family-base: "JetBrains Mono", "Courier New", monospace;
-  --font-family-mono: "JetBrains Mono", "Courier New", monospace;
+  --font-family-base: "Roboto Mono", "Courier New", monospace;
+  --font-family-mono: "Roboto Mono", "Courier New", monospace;
   --font-size-base: 15px;
   --font-size-sm: 13px;
   --font-size-lg: 17px;
