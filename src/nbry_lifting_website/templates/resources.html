@@ -1,21 +1,19 @@
-{% extends "base.html" %}
-
-{% block title %}
-  Resources - NBRY Lifting
-{% endblock %}
-
+{% extends "base.html" %} {% block title %}Resources - NBRY Lifting{% endblock %}
 {% block content %}
-  <div class="content">
-    <h2>Exercise Form Resources</h2>
+  <section aria-labelledby="resources-heading">
+    <h2 id="resources-heading">Exercise Form Resources</h2>
     <p>Video guides for proper exercise form and technique.</p>
 
-    <table border="1" cellpadding="10">
+    <table>
+      <caption>
+        Exercise Form Video Resources
+      </caption>
       <thead>
         <tr>
-          <th>Exercise</th>
-          <th>Description</th>
-          <th>Length</th>
-          <th>Link</th>
+          <th scope="col">Exercise</th>
+          <th scope="col">Description</th>
+          <th scope="col">Length</th>
+          <th scope="col">Link</th>
         </tr>
       </thead>
       <tbody>
@@ -23,19 +21,43 @@
           <td>Squat</td>
           <td>Squat Checklist: Do you have a perfect squat?</td>
           <td>0:51</td>
-          <td><a href="https://www.youtube.com/shorts/PPmvh7gBTi0" target="_blank">Watch</a></td>
+          <td>
+            <a
+              href="https://www.youtube.com/shorts/PPmvh7gBTi0"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Watch Squat Checklist video (opens in new window)"
+              >Watch</a
+            >
+          </td>
         </tr>
         <tr>
           <td>Deadlift</td>
           <td>How to deadlift with perfect technique</td>
           <td>0:54</td>
-          <td><a href="https://www.youtube.com/shorts/ZaTM37cfiDs" target="_blank">Watch</a></td>
+          <td>
+            <a
+              href="https://www.youtube.com/shorts/ZaTM37cfiDs"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Watch Deadlift technique video (opens in new window)"
+              >Watch</a
+            >
+          </td>
         </tr>
         <tr>
           <td>Barbell Row</td>
           <td>Detailed video on how to barbell row, specifically Pendlay Row variation.</td>
           <td>8:54</td>
-          <td><a href="https://www.youtube.com/watch?v=axoeDmW0oAY" target="_blank">Watch</a></td>
+          <td>
+            <a
+              href="https://www.youtube.com/watch?v=axoeDmW0oAY"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Watch Barbell Row video (opens in new window)"
+              >Watch</a
+            >
+          </td>
         </tr>
         <tr>
           <td>Skullcrusher</td>
@@ -45,19 +67,43 @@
             your arm should be behind you for maximum stretch.
           </td>
           <td>0:18</td>
-          <td><a href="https://www.youtube.com/shorts/nVo7WCDSNqQ" target="_blank">Watch</a></td>
+          <td>
+            <a
+              href="https://www.youtube.com/shorts/nVo7WCDSNqQ"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Watch Skullcrusher form video (opens in new window)"
+              >Watch</a
+            >
+          </td>
         </tr>
         <tr>
           <td>Skullcrusher</td>
           <td>Detailed video on how to do skullcrushers</td>
           <td>1:59</td>
-          <td><a href="https://www.youtube.com/watch?v=S0fmDR60X-o" target="_blank">Watch</a></td>
+          <td>
+            <a
+              href="https://www.youtube.com/watch?v=S0fmDR60X-o"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Watch detailed Skullcrusher video (opens in new window)"
+              >Watch</a
+            >
+          </td>
         </tr>
         <tr>
           <td>Reverse Crunch</td>
           <td>What to do and what not to do for reverse crunches</td>
           <td>0:30</td>
-          <td><a href="https://www.youtube.com/shorts/Xcs6isX8bZw" target="_blank">Watch</a></td>
+          <td>
+            <a
+              href="https://www.youtube.com/shorts/Xcs6isX8bZw"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Watch Reverse Crunch video (opens in new window)"
+              >Watch</a
+            >
+          </td>
         </tr>
       </tbody>
     </table>
@@ -65,9 +111,33 @@
     <h3>Recommended YouTube Creators</h3>
     <p>For additional form guides and training advice, check out:</p>
     <ul>
-      <li><a href="https://www.youtube.com/@jeffnippard" target="_blank">Jeff Nippard</a></li>
-      <li><a href="https://www.youtube.com/@jeremyethier" target="_blank">Jeremy Ethier</a></li>
-      <li><a href="https://www.youtube.com/@TylerPath" target="_blank">Tyler Path</a></li>
+      <li>
+        <a
+          href="https://www.youtube.com/@jeffnippard"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Visit Jeff Nippard YouTube channel (opens in new window)"
+          >Jeff Nippard</a
+        >
+      </li>
+      <li>
+        <a
+          href="https://www.youtube.com/@jeremyethier"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Visit Jeremy Ethier YouTube channel (opens in new window)"
+          >Jeremy Ethier</a
+        >
+      </li>
+      <li>
+        <a
+          href="https://www.youtube.com/@TylerPath"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Visit Tyler Path YouTube channel (opens in new window)"
+          >Tyler Path</a
+        >
+      </li>
     </ul>
-  </div>
+  </section>
 {% endblock %}
