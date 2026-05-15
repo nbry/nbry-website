@@ -102,6 +102,10 @@ h2 {
   font-size: 1.5rem;
 }
 
+h2:first-of-type {
+  margin-top: 0;
+}
+
 h3 {
   font-size: 1.25rem;
 }
@@ -150,13 +154,81 @@ main {
 }
 
 /* ========================================
+   Sidebar & Table of Contents
+   ======================================== */
+
+.page-with-sidebar {
+  display: flex;
+  gap: var(--space-lg);
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.sidebar {
+  display: none;
+  flex: 0 0 150px;
+}
+
+.toc {
+  position: fixed;
+  top: 180px;
+  left: 50%;
+  transform: translateX(calc(-50% + 327px));
+  width: 150px;
+  border-left: 2px solid var(--color-border);
+  padding-left: var(--space-md);
+}
+
+.toc h3 {
+  margin-top: 0;
+  font-size: 0.85rem;
+  margin-bottom: var(--space-md);
+  color: var(--color-text-secondary);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.toc ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.toc li {
+  margin-bottom: var(--space-sm);
+}
+
+.toc a {
+  font-size: 0.9rem;
+  display: block;
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: 4px;
+}
+
+.toc a:hover {
+  background-color: var(--color-bg-secondary);
+  text-decoration: none;
+}
+
+.main-with-toc {
+  flex: 1;
+  min-width: 0;
+}
+
+h2 {
+  scroll-margin-top: 100px;
+}
+
+/* ========================================
    Header & Navigation
    ======================================== */
 
 header {
   background-color: var(--color-bg-secondary);
   border-bottom: 1px solid var(--color-border);
-  padding: var(--space-md) var(--space-md);
+  padding: 0.25rem var(--space-md);
   position: sticky;
   top: 0;
   z-index: 50;
@@ -168,7 +240,8 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: var(--space-md);
+  width: 100%;
+  padding: 0 var(--space-md);
 }
 
 header h1 {
@@ -182,6 +255,7 @@ nav {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-md);
+  padding: 0 var(--space-md);
 }
 
 nav a {
@@ -304,10 +378,11 @@ footer {
    Responsive Design (Mobile-First)
    ======================================== */
 
-/* Mobile: max-width 767px */
-@media (max-width: 767px) {
+/* Mobile: max-width 899px */
+@media (max-width: 899px) {
   .nav-label {
     display: block;
+    order: 2;
   }
 
   nav {
@@ -315,12 +390,13 @@ footer {
     flex-direction: column;
     position: absolute;
     top: 100%;
-    left: 0;
     right: 0;
+    left: auto;
     background-color: var(--color-bg-secondary);
     border-bottom: 1px solid var(--color-border);
     gap: 0;
     z-index: 40;
+    min-width: 200px;
   }
 
   nav a {
@@ -338,8 +414,8 @@ footer {
   }
 }
 
-/* Tablet breakpoint: 768px */
-@media (min-width: 768px) {
+/* Tablet breakpoint: 900px */
+@media (min-width: 900px) {
   :root {
     --font-size-base: 17px;
   }
@@ -375,11 +451,11 @@ footer {
   }
 
   header {
-    padding: var(--space-xl) var(--space-lg);
+    padding: 0.25rem var(--space-lg);
   }
 
   .header-container {
-    margin-bottom: var(--space-lg);
+    margin-bottom: 0;
   }
 }
 
@@ -395,6 +471,11 @@ footer {
 
   nav {
     gap: var(--space-xl);
+  }
+
+  .sidebar {
+    display: block;
+    order: 2;
   }
 }
 
