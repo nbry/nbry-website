@@ -1,0 +1,19 @@
+name = "Deload"
+
+[[days]]
+name = "Day 1"
+
+[[days.exercises]]
+exercise = "squat"
+sets = [
+    { reps = 3, tune = 0.6 },
+    { reps = 3, tune = 0.6 },
+    { reps = 3, tune = 0.6 },
+]
+
+[[days.exercises]]
+exercise = "ohp"
+sets = [
+    { reps = 5, tune = 0.65 },
+    { reps = 5, tune = 0.65 },
+]

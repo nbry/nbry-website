@@ -1,0 +1,239 @@
+[deadlift]
+calculation_mode = "training_max"
+enabled = true
+equipment = "barbell"
+focus = "strength"
+increment = 10
+movement = "hinge"
+tier = "primary"
+
+[bench]
+calculation_mode = "training_max"
+enabled = true
+equipment = "barbell"
+focus = "strength"
+increment = 5
+movement = "horizontal_press"
+tier = "primary"
+
+[squat]
+calculation_mode = "training_max"
+enabled = true
+equipment = "barbell"
+focus = "strength"
+increment = 10
+movement = "squat"
+tier = "primary"
+
+[barbell_row]
+calculation_mode = "static"
+enabled = true
+equipment = "barbell"
+focus = "strength"
+increment = 2.5
+movement = "horizontal_pull"
+rep_range = [
+    5,
+    8,
+]
+target_reps = 5
+target_weight = 120
+tier = "secondary"
+
+[ohp]
+calculation_mode = "static"
+enabled = true
+equipment = "barbell"
+focus = "strength"
+increment = 2.5
+movement = "vertical_press"
+rep_range = [
+    5,
+    8,
+]
+target_reps = 5
+target_weight = 120
+tier = "secondary"
+
+[pullups]
+calculation_mode = "static"
+enabled = true
+equipment = "plate"
+focus = "strength"
+increment = 5
+movement = "vertical_pull"
+rep_range = [
+    1,
+    15,
+]
+target_reps = 8
+target_weight = 0
+tier = "secondary"
+
+[rdl]
+calculation_mode = "reference"
+enabled = true
+equipment = "barbell"
+focus = "hypertrophy"
+movement = "hinge"
+reference_exercise = "deadlift"
+tier = "secondary"
+
+[db_bench_press]
+calculation_mode = "reference"
+enabled = true
+equipment = "dumbbell"
+focus = "hypertrophy"
+movement = "horizontal_press"
+reference_exercise = "bench"
+tier = "secondary"
+
+[db_row]
+calculation_mode = "static"
+enabled = true
+equipment = "dumbbell"
+focus = "hypertrophy"
+increment = 5
+movement = "horizontal_pull"
+rep_range = [
+    8,
+    10,
+]
+target_reps = 8
+target_weight = 120
+tier = "secondary"
+
+[lateral_raise]
+calculation_mode = "static"
+enabled = true
+equipment = "dumbbell"
+focus = "hypertrophy"
+increment = 2.5
+movement = "accessory"
+rep_range = [
+    8,
+    12,
+]
+target_reps = 10
+target_weight = 30
+tier = "tertiary"
+
+[wrist_extension]
+calculation_mode = "static"
+enabled = true
+equipment = "dumbbell"
+focus = "hypertrophy"
+increment = 2.5
+movement = "accessory"
+rep_range = [
+    12,
+    20,
+]
+target_reps = 12
+target_weight = 20
+tier = "tertiary"
+
+[wrist_curl]
+calculation_mode = "static"
+enabled = true
+equipment = "dumbbell"
+focus = "hypertrophy"
+increment = 2.5
+movement = "accessory"
+rep_range = [
+    12,
+    20,
+]
+target_reps = 12
+target_weight = 30
+tier = "tertiary"
+
+[calf_raise]
+calculation_mode = "static"
+enabled = true
+equipment = "barbell"
+focus = "hypertrophy"
+increment = 40
+movement = "accessory"
+rep_range = [
+    10,
+    15,
+]
+target_reps = 12
+target_weight = 135
+tier = "tertiary"
+
+[ab_mat_situp]
+calculation_mode = "static"
+enabled = true
+equipment = "plate"
+focus = "hypertrophy"
+increment = 5
+movement = "core"
+rep_range = [
+    8,
+    15,
+]
+target_reps = 12
+target_weight = 5
+tier = "tertiary"
+
+[lying_db_curl]
+calculation_mode = "static"
+enabled = true
+equipment = "dumbbell"
+focus = "hypertrophy"
+increment = 2.5
+movement = "curl"
+rep_range = [
+    8,
+    12,
+]
+target_reps = 12
+target_weight = 35
+tier = "tertiary"
+
+[preacher_curl]
+calculation_mode = "static"
+enabled = true
+equipment = "freeweight"
+focus = "hypertrophy"
+increment = 2.5
+movement = "curl"
+rep_range = [
+    8,
+    12,
+]
+target_reps = 8
+target_weight = 55
+tier = "tertiary"
+
+[skullcrusher]
+calculation_mode = "static"
+enabled = true
+equipment = "barbell"
+focus = "hypertrophy"
+increment = 2.5
+movement = "extension"
+rep_range = [
+    8,
+    12,
+]
+target_reps = 12
+target_weight = 30
+tier = "tertiary"
+
+[reverse_crunch]
+calculation_mode = "static"
+enabled = true
+equipment = "bodyweight"
+focus = "hypertrophy"
+increment = 0
+movement = "core"
+rep_range = [
+    8,
+    15,
+]
+target_reps = 9
+target_weight = 0
+tier = "tertiary"

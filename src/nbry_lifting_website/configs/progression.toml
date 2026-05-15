@@ -1,0 +1,27 @@
+[primary]
+increase_training_max_by_increment = true
+progress_if = "all_sets_and_reps_completed"
+
+[primary.failure_policy]
+allow_manual_override = true
+repeat_cycle_on_failure = true
+
+[secondary]
+progress_if = "all_sets_completed"
+
+[secondary.if_top_of_rep_range]
+increase_weight_by_increment = true
+reset_reps_to_rep_range_minimum = true
+
+[secondary.otherwise]
+increase_target_reps_by = 1
+
+[tertiary]
+progress_if = "all_sets_completed"
+
+[tertiary.if_top_of_rep_range]
+increase_weight_by_increment = true
+reset_reps_to_rep_range_minimum = true
+
+[tertiary.otherwise]
+increase_target_reps_by = 1

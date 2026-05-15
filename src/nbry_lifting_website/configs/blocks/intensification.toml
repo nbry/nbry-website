@@ -1,0 +1,22 @@
+name = "Intensification"
+
+[[days]]
+name = "Day 1"
+
+[[days.exercises]]
+exercise = "squat"
+sets = [
+    { reps = 3, tune = 0.85 },
+    { reps = 3, tune = 0.8 },
+    { reps = 3, tune = 0.8 },
+    { reps = 3, tune = 0.8 },
+]
+
+[[days.exercises]]
+exercise = "ohp"
+sets = [
+    { reps = 4, tune = 1.025 },
+    { reps = 4, tune = 0.925 },
+    { reps = 4, tune = 0.925 },
+    { reps = 4, tune = 0.925 },
+]
