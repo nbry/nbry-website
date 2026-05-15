@@ -7,6 +7,10 @@ lint:
 test:
 	uv run pytest
 
+clean:
+	find . -type d -name "__pycache__" -exec rm -rf {} +
+	find . -type f -name "*.pyc" -delete
+
 format:
 	uv run ruff check --fix .
 	uv run ruff format .
