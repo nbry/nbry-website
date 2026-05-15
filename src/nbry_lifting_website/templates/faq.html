@@ -1,112 +1,120 @@
-{% extends "base.html" %} {% block title %}FAQ - NBRY Lifting{% endblock %} {% block content %}
-<div class="content">
-  <h2>Frequently Asked Questions</h2>
+{% extends "base.html" %}
 
-  <h3>Is there a way to set units? kg vs lb?</h3>
-  <p>
-    This spreadsheet is designed to be unit-agnostic. To switch units, toggle the Unit value at the
-    top of the config sheet and (of course) update the number values for the weights.
-  </p>
-  <p>
-    The journal sheet (named "_j", and still a work in progress) includes conditional formatting for
-    a few lifting milestones. One of these tracks when you reach "2 plates," "3 plates," "4 plates,"
-    and so on. In this context, a "plate" refers to the standard large barbell plate: 20 kg in
-    metric and 45 lb in imperial. Note that this is not a strict conversion—20 kg is roughly 44.1
-    lb—but for simplicity, the system treats them as discrete values (20 and 45 respectively
-    depending on the unit system).
-  </p>
-  <p>
-    There is also a milestone for the "1000 lb club," which highlights a cell in pink when reached.
-    In metric, this is set to the equivalent total of 454 kg. I'm not sure whether there's a
-    comparable cultural milestone in kilograms—let me know if 454 kg is commonly recognized, or if
-    500 kg would be a more appropriate benchmark to celebrate instead.
-  </p>
+{% block title %}
+  FAQ - NBRY Lifting
+{% endblock %}
 
-  <h3>How do I determine if I should progress?</h3>
-  <p><strong>Use this framework:</strong></p>
-  <ol>
-    <li>Did I hit all (or the vast majority) of the lifts?</li>
-    <li>Did I maintain good form on 90% of the lifts?</li>
-  </ol>
-  <p>
-    If yes to both, then progress. Be honest with yourself - do not injure yourself because of ego.
-    Remember that increasing weight or reps aren't the only things that qualify for progressive
-    overloading. Improvements in form and/or mind-muscle connection are considered progress.
-  </p>
-  <p>
-    For example, let's say you hit all your lifts, but it was such a struggle that you compromised
-    your form to complete them in an intense grind. It might be worth keeping your weights as they
-    are (or maybe even decreasing for the next cycle) and setting of goal of hitting them cleanly.
-  </p>
+{% block content %}
+  <div class="content">
+    <h2>Frequently Asked Questions</h2>
 
-  <h3>Can I use this program as an advanced lifter?</h3>
-  <p>
-    I honestly don't know if this program would be effective for an advanced lifter (as of early
-    2026, I am not one myself), but my guess is that it might be too basic for someone who considers
-    themselves advanced.
-  </p>
+    <h3>Is there a way to set units? kg vs lb?</h3>
+    <p>
+      This spreadsheet is designed to be unit-agnostic. To switch units, toggle the Unit value at
+      the top of the config sheet and (of course) update the number values for the weights.
+    </p>
+    <p>
+      The journal sheet (named "_j", and still a work in progress) includes conditional formatting
+      for a few lifting milestones. One of these tracks when you reach "2 plates," "3 plates," "4
+      plates," and so on. In this context, a "plate" refers to the standard large barbell plate: 20
+      kg in metric and 45 lb in imperial. Note that this is not a strict conversion—20 kg is roughly
+      44.1 lb—but for simplicity, the system treats them as discrete values (20 and 45 respectively
+      depending on the unit system).
+    </p>
+    <p>
+      There is also a milestone for the "1000 lb club," which highlights a cell in pink when
+      reached. In metric, this is set to the equivalent total of 454 kg. I'm not sure whether
+      there's a comparable cultural milestone in kilograms—let me know if 454 kg is commonly
+      recognized, or if 500 kg would be a more appropriate benchmark to celebrate instead.
+    </p>
 
-  <h3>What kind of barbell row am I doing? Regular? Pendlay rows? Do I need to use barbell?</h3>
-  <p>
-    You choose whichever you think feels better. They're both great exercises. Heck, if I had access
-    to a chest-supported row or a cable row, I'd be tempted to do those instead.
-  </p>
+    <h3>How do I determine if I should progress?</h3>
+    <p><strong>Use this framework:</strong></p>
+    <ol>
+      <li>Did I hit all (or the vast majority) of the lifts?</li>
+      <li>Did I maintain good form on 90% of the lifts?</li>
+    </ol>
+    <p>
+      If yes to both, then progress. Be honest with yourself - do not injure yourself because of
+      ego. Remember that increasing weight or reps aren't the only things that qualify for
+      progressive overloading. Improvements in form and/or mind-muscle connection are considered
+      progress.
+    </p>
+    <p>
+      For example, let's say you hit all your lifts, but it was such a struggle that you compromised
+      your form to complete them in an intense grind. It might be worth keeping your weights as they
+      are (or maybe even decreasing for the next cycle) and setting of goal of hitting them cleanly.
+    </p>
 
-  <h3>I have access to other exercises and machines. Can I substitute those?</h3>
-  <p>
-    Yes, for Secondary and Tertiary exercises. The default exercise selection in this program is
-    based on what I have available in my own garage gym. It's not because free weights are
-    inherently superior—they're simply what I own, use, and enjoy training with.
-  </p>
-  <p>
-    Machines and cables are excellent tools as well, and in many cases they can be just as effective
-    (or even better) for hypertrophy work. Feel free to substitute any Secondary or Tertiary
-    exercises with appropriate alternatives that match the same movement pattern.
-  </p>
-  <p>
-    This program already uses variation intentionally. For example, the secondary strength lifts
-    have hypertrophy-focused counterparts (e.g. RDLs for deadlifts, dumbbell bench for barbell bench
-    press, dumbbell rows for barbell rows, etc.).
-  </p>
-  <p>
-    If you have access to a lat pulldown (a vertical pull option), I would strongly consider
-    replacing the Day 2 pull-ups with it. I would make that substitution myself if the equipment
-    were available.
-  </p>
+    <h3>Can I use this program as an advanced lifter?</h3>
+    <p>
+      I honestly don't know if this program would be effective for an advanced lifter (as of early
+      2026, I am not one myself), but my guess is that it might be too basic for someone who
+      considers themselves advanced.
+    </p>
 
-  <h3>What about the squat, bench, and deadlift? Can I substitute those?</h3>
-  <p>
-    The short answer is yes, but at that point, you may be better off choosing a different program.
-  </p>
-  <p>
-    This is a powerbuilding program, and it's built around the core powerlifting movements. The
-    accessory work and overall volume are specifically balanced around the fatigue and stimulus
-    generated by the squat, bench press, and deadlift.
-  </p>
-  <p>
-    If you replace those main lifts with alternatives, the overall training stress and stimulus will
-    change, and you may find that the program no longer provides enough volume or progression in its
-    current structure.
-  </p>
+    <h3>What kind of barbell row am I doing? Regular? Pendlay rows? Do I need to use barbell?</h3>
+    <p>
+      You choose whichever you think feels better. They're both great exercises. Heck, if I had
+      access to a chest-supported row or a cable row, I'd be tempted to do those instead.
+    </p>
 
-  <h3>How much should I rest between sets?</h3>
-  <p>
-    <strong>Use your best judgment, but these are my recommendations:</strong>
-  </p>
-  <ol>
-    <li>For Deadlift specifically - 5 minutes</li>
-    <li>Primary strength - 3 minutes</li>
-    <li>Secondary strength - 2.5-3 minutes</li>
-    <li>Secondary hypertrophy - 2 minutes</li>
-    <li>Tertiary - 1.5 minutes</li>
-  </ol>
-  <p>On deload weeks, you can probably cut these by half.</p>
+    <h3>I have access to other exercises and machines. Can I substitute those?</h3>
+    <p>
+      Yes, for Secondary and Tertiary exercises. The default exercise selection in this program is
+      based on what I have available in my own garage gym. It's not because free weights are
+      inherently superior—they're simply what I own, use, and enjoy training with.
+    </p>
+    <p>
+      Machines and cables are excellent tools as well, and in many cases they can be just as
+      effective (or even better) for hypertrophy work. Feel free to substitute any Secondary or
+      Tertiary exercises with appropriate alternatives that match the same movement pattern.
+    </p>
+    <p>
+      This program already uses variation intentionally. For example, the secondary strength lifts
+      have hypertrophy-focused counterparts (e.g. RDLs for deadlifts, dumbbell bench for barbell
+      bench press, dumbbell rows for barbell rows, etc.).
+    </p>
+    <p>
+      If you have access to a lat pulldown (a vertical pull option), I would strongly consider
+      replacing the Day 2 pull-ups with it. I would make that substitution myself if the equipment
+      were available.
+    </p>
 
-  <h3>How do I know I'm doing these exercises correctly?</h3>
-  <p>
-    I will be soon be adding a resources page to this spreadsheet soon with videos on suggested
-    form. In the meantime, my recommendations would be to look to youtube for Jeff Nippard, Jeremy
-    Ethier, or Tyler Path on form suggestions.
-  </p>
-</div>
+    <h3>What about the squat, bench, and deadlift? Can I substitute those?</h3>
+    <p>
+      The short answer is yes, but at that point, you may be better off choosing a different
+      program.
+    </p>
+    <p>
+      This is a powerbuilding program, and it's built around the core powerlifting movements. The
+      accessory work and overall volume are specifically balanced around the fatigue and stimulus
+      generated by the squat, bench press, and deadlift.
+    </p>
+    <p>
+      If you replace those main lifts with alternatives, the overall training stress and stimulus
+      will change, and you may find that the program no longer provides enough volume or progression
+      in its current structure.
+    </p>
+
+    <h3>How much should I rest between sets?</h3>
+    <p>
+      <strong>Use your best judgment, but these are my recommendations:</strong>
+    </p>
+    <ol>
+      <li>For Deadlift specifically - 5 minutes</li>
+      <li>Primary strength - 3 minutes</li>
+      <li>Secondary strength - 2.5-3 minutes</li>
+      <li>Secondary hypertrophy - 2 minutes</li>
+      <li>Tertiary - 1.5 minutes</li>
+    </ol>
+    <p>On deload weeks, you can probably cut these by half.</p>
+
+    <h3>How do I know I'm doing these exercises correctly?</h3>
+    <p>
+      I will be soon be adding a resources page to this spreadsheet soon with videos on suggested
+      form. In the meantime, my recommendations would be to look to youtube for Jeff Nippard, Jeremy
+      Ethier, or Tyler Path on form suggestions.
+    </p>
+  </div>
 {% endblock %}

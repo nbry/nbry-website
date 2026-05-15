@@ -30,3 +30,27 @@ async def faq(request: Request):
     return templates.TemplateResponse(
         request=request, name="faq.html", context={"request": request}
     )
+
+
+@app.get("/changelog")
+async def changelog(request: Request):
+    """Program changelog and version history."""
+    return templates.TemplateResponse(
+        request=request, name="changelog.html", context={"request": request}
+    )
+
+
+@app.get("/links")
+async def links(request: Request):
+    """Links to external resources."""
+    return templates.TemplateResponse(
+        request=request, name="links.html", context={"request": request}
+    )
+
+
+@app.get("/resources")
+async def resources(request: Request):
+    """Exercise form resources and videos."""
+    return templates.TemplateResponse(
+        request=request, name="resources.html", context={"request": request}
+    )
