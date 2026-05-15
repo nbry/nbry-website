@@ -460,8 +460,7 @@ footer {
    Responsive Design (Mobile-First)
    ======================================== */
 
-/* Mobile: max-width 899px */
-@media (max-width: 899px) {
+@media (max-width: 950px) {
   .nav-label {
     display: block;
     order: 2;
@@ -496,8 +495,8 @@ footer {
   }
 }
 
-/* Tablet breakpoint: 900px */
-@media (min-width: 900px) {
+/* Tablet breakpointx */
+@media (min-width: 951px) {
   :root {
     --font-size-base: 17px;
   }
