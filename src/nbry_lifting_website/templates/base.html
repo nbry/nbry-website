@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-theme="light">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,14 +12,9 @@
     <header>
       <div class="header-container">
         <h1>NBRY Lifting</h1>
-        <div class="header-controls">
-          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode" type="button">
-            🌙
-          </button>
-          <label for="nav-toggle" class="nav-label" aria-label="Toggle navigation menu">☰</label>
-        </div>
       </div>
       <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+      <label for="nav-toggle" class="nav-label" aria-label="Toggle navigation menu">☰</label>
       <nav aria-label="Main navigation">
         <a href="/">Home</a>
         <a href="/instructions">Instructions</a>
@@ -35,7 +30,5 @@
     <footer>
       <p>&copy; 2026 NBRY Lifting. All rights reserved.</p>
     </footer>
-
-    <script src="{{ url_for('static', path='js/theme.js') }}" defer></script>
   </body>
 </html>
