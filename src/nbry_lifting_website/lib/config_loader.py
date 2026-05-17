@@ -2,6 +2,7 @@
 
 import tomllib
 from pathlib import Path
+from typing import Any
 
 
 class ConfigLoader:
@@ -21,7 +22,7 @@ class ConfigLoader:
                 f"Config path is not a directory: {self.config_dir}"
             )
 
-    def load(self, filename: str) -> dict:
+    def load(self, filename: str) -> dict[str, Any]:
         """Load a TOML file and return parsed data.
 
         Args:

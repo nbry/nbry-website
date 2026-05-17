@@ -2,6 +2,7 @@
 
 import tomllib
 from pathlib import Path
+from typing import Any
 
 import pytest
 
@@ -28,7 +29,7 @@ class TestConfigLoaderInit:
         with pytest.raises(FileNotFoundError, match="Config directory not found"):
             ConfigLoader("nonexistent/directory")
 
-    def test_init_with_file_instead_of_directory(self, tmp_path):
+    def test_init_with_file_instead_of_directory(self, tmp_path: Path):
         """ConfigLoader raises NotADirectoryError when path is a file."""
         file_path = tmp_path / "not_a_dir.txt"
         file_path.touch()
@@ -41,11 +42,11 @@ class TestConfigLoaderLoad:
     """Tests for ConfigLoader.load() method."""
 
     @pytest.fixture
-    def loader(self):
+    def loader(self) -> ConfigLoader:
         """Fixture providing ConfigLoader with actual config directory."""
         return ConfigLoader("src/nbry_lifting_website/configs")
 
-    def test_load_program_toml(self, loader):
+    def test_load_program_toml(self, loader: ConfigLoader):
         """Load program.toml and verify structure."""
         data = loader.load("program.toml")
 
@@ -55,7 +56,7 @@ class TestConfigLoaderLoad:
         assert data["program"]["duration_weeks"] == 5
         assert data["program"]["days_per_week"] == 4
 
-    def test_load_program_has_block_references(self, loader):
+    def test_load_program_has_block_references(self, loader: ConfigLoader):
         """program.toml contains block references."""
         data = loader.load("program.toml")
 
@@ -65,7 +66,7 @@ class TestConfigLoaderLoad:
         assert blocks[0]["file"] == "blocks/accumulation.toml"
         assert blocks[0]["weeks"] == [1, 2]
 
-    def test_load_nested_block_file(self, loader):
+    def test_load_nested_block_file(self, loader: ConfigLoader):
         """Load nested block file from blocks/ subdirectory."""
         data = loader.load("blocks/accumulation.toml")
 
@@ -74,7 +75,7 @@ class TestConfigLoaderLoad:
         assert "days" in data
         assert len(data["days"]) > 0
 
-    def test_load_exercises_catalog(self, loader):
+    def test_load_exercises_catalog(self, loader: ConfigLoader):
         """Load exercises.toml and verify structure."""
         data = loader.load("exercises.toml")
 
@@ -84,12 +85,12 @@ class TestConfigLoaderLoad:
         assert "bench" in data
         assert "deadlift" in data
 
-    def test_load_nonexistent_file(self, loader):
+    def test_load_nonexistent_file(self, loader: ConfigLoader):
         """Loading nonexistent file raises FileNotFoundError."""
         with pytest.raises(FileNotFoundError, match="Config file not found"):
             loader.load("nonexistent.toml")
 
-    def test_load_invalid_toml(self, tmp_path):
+    def test_load_invalid_toml(self, tmp_path: Path):
         """Loading invalid TOML raises TOMLDecodeError."""
         # Create temp config dir with invalid TOML
         config_dir = tmp_path / "configs"
@@ -102,7 +103,7 @@ class TestConfigLoaderLoad:
         with pytest.raises(tomllib.TOMLDecodeError):
             loader.load("bad.toml")
 
-    def test_load_returns_dict(self, loader):
+    def test_load_returns_dict(self, loader: ConfigLoader):
         """load() returns a dictionary."""
         data = loader.load("program.toml")
         assert isinstance(data, dict)
@@ -112,11 +113,11 @@ class TestConfigLoaderDataStructure:
     """Tests verifying the structure of loaded config data."""
 
     @pytest.fixture
-    def loader(self):
+    def loader(self) -> ConfigLoader:
         """Fixture providing ConfigLoader."""
         return ConfigLoader("src/nbry_lifting_website/configs")
 
-    def test_block_contains_days_with_exercises(self, loader):
+    def test_block_contains_days_with_exercises(self, loader: ConfigLoader):
         """Block files contain days with exercises."""
         data = loader.load("blocks/accumulation.toml")
 
@@ -125,7 +126,7 @@ class TestConfigLoaderDataStructure:
         assert "exercises" in first_day
         assert len(first_day["exercises"]) > 0
 
-    def test_exercise_has_sets_and_reps(self, loader):
+    def test_exercise_has_sets_and_reps(self, loader: ConfigLoader):
         """Exercises in blocks have sets and reps data."""
         data = loader.load("blocks/accumulation.toml")
 
@@ -135,7 +136,7 @@ class TestConfigLoaderDataStructure:
         # Exercises can have either detailed sets or shorthand notation
         assert "sets" in first_exercise or "reps" in first_exercise
 
-    def test_detailed_sets_have_reps_and_tune(self, loader):
+    def test_detailed_sets_have_reps_and_tune(self, loader: ConfigLoader):
         """Detailed set definitions have reps and tune values."""
         data = loader.load("blocks/accumulation.toml")
 
@@ -143,11 +144,11 @@ class TestConfigLoaderDataStructure:
         squat = data["days"][0]["exercises"][0]
         assert squat["exercise"] == "squat"
 
-        sets = squat["sets"]
+        sets: list[Any] = squat["sets"]
         assert isinstance(sets, list)
         assert len(sets) > 0
 
-        first_set = sets[0]
+        first_set: dict[str, Any] = sets[0]
         assert "reps" in first_set
         assert "tune" in first_set
         assert first_set["tune"] == 0.72  # 72% of training max
