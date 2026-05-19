@@ -10,12 +10,37 @@
     <header>
       <div class="header-container">
         <h1>NBRY Lifting</h1>
-        <label for="nav-toggle" class="nav-label" aria-label="Toggle navigation menu">☰</label>
+        <label for="nav-toggle" class="nav-label" aria-label="Toggle navigation menu">
+          <svg
+            width="32"
+            height="32"
+            viewBox="0 0 32 32"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M5 8h22M5 16h22M5 24h22"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+            />
+          </svg>
+        </label>
       </div>
       <input type="checkbox" id="nav-toggle" class="nav-toggle" />
       <nav aria-label="Main navigation">
         <a href="/">Home</a>
-        <a href="/instructions">Instructions</a>
+        <div class="nav-dropdown">
+          <input type="checkbox" id="program-dropdown" class="dropdown-toggle" />
+          <label for="program-dropdown" class="nav-dropdown-toggle">
+            Program <span class="dropdown-arrow">▾</span>
+          </label>
+          <div class="nav-dropdown-menu">
+            <a href="/philosophy">Philosophy</a>
+            <a href="/instructions">Instructions</a>
+            <a href="/equipment">Equipment</a>
+          </div>
+        </div>
         <a href="/faq">FAQ</a>
         <a href="/resources">Resources</a>
         <a href="/links">Links</a>

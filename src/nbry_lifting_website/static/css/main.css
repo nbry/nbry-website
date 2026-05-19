@@ -369,14 +369,113 @@ nav a:focus {
 .nav-label {
   display: none;
   cursor: pointer;
-  font-size: 1.5rem;
   padding: var(--space-sm);
   border-radius: 4px;
   transition: background-color var(--transition-base);
+  line-height: 0;
+}
+
+.nav-label svg {
+  color: var(--color-text);
+  transition: color var(--transition-base);
 }
 
 .nav-label:hover {
   background-color: var(--color-border);
+}
+
+.nav-label:hover svg {
+  color: var(--color-accent);
+}
+
+/* ========================================
+   Dropdown Navigation
+   ======================================== */
+
+.nav-dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
+  display: none;
+}
+
+.nav-dropdown-toggle {
+  background: none;
+  border: none;
+  color: var(--color-accent);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  cursor: pointer;
+  padding: var(--space-xs) var(--space-md);
+  border-radius: 4px;
+  transition:
+    background-color var(--transition-base),
+    color var(--transition-base);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  vertical-align: baseline;
+}
+
+.dropdown-arrow {
+  font-size: 0.8em;
+  transition: transform var(--transition-base);
+}
+
+.nav-dropdown-toggle:hover {
+  background-color: var(--color-bg);
+  color: var(--color-accent-hover);
+  text-decoration: none;
+}
+
+.nav-dropdown-toggle:focus {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+.nav-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  min-width: 180px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  z-index: 100;
+  margin-top: 0.25rem;
+}
+
+.nav-dropdown-menu a {
+  display: block;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: 0;
+  border-bottom: 1px solid var(--color-border);
+  transition:
+    background-color var(--transition-base),
+    color var(--transition-base);
+}
+
+.nav-dropdown-menu a:last-child {
+  border-bottom: none;
+}
+
+.nav-dropdown-menu a:hover {
+  background-color: var(--color-bg);
+  color: var(--color-accent);
+}
+
+/* Desktop: hover to show dropdown */
+@media (min-width: 951px) {
+  .nav-dropdown:hover .nav-dropdown-menu {
+    display: block;
+  }
+
+  .nav-dropdown:hover .dropdown-arrow {
+    transform: rotate(180deg);
+  }
 }
 
 /* ========================================
@@ -492,6 +591,40 @@ footer {
 
   .nav-toggle:checked ~ nav {
     display: flex;
+  }
+
+  /* Dropdown styles for mobile */
+  .nav-dropdown {
+    width: 100%;
+  }
+
+  .nav-dropdown-toggle {
+    width: 100%;
+    justify-content: space-between;
+    padding: var(--space-md);
+    border-radius: 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .nav-dropdown-menu {
+    position: static;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    background-color: var(--color-bg);
+    margin-top: 0;
+  }
+
+  .nav-dropdown-menu a {
+    padding-left: var(--space-xl);
+  }
+
+  .dropdown-toggle:checked ~ .nav-dropdown-menu {
+    display: block;
+  }
+
+  .dropdown-toggle:checked ~ .nav-dropdown-toggle .dropdown-arrow {
+    transform: rotate(180deg);
   }
 }
 

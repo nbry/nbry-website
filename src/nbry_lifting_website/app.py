@@ -23,6 +23,22 @@ async def home(request: Request):
     )
 
 
+@app.get("/philosophy")
+async def philosophy(request: Request):
+    """Program philosophy and training principles."""
+    return templates.TemplateResponse(
+        request=request, name="philosophy.html", context={"request": request}
+    )
+
+
+@app.get("/equipment")
+async def equipment(request: Request):
+    """Equipment requirements and recommendations."""
+    return templates.TemplateResponse(
+        request=request, name="equipment.html", context={"request": request}
+    )
+
+
 @app.get("/instructions")
 async def instructions(request: Request):
     """Instructions page of the website."""
