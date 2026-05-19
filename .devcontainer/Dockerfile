@@ -21,35 +21,35 @@ RUN dnf update -y && \
     sudo \
     && dnf clean all
 
-# Create vscode user with sudo access
-RUN useradd -m -s /bin/zsh -u 1000 vscode && \
-    echo "vscode ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+# Create dev user with sudo access
+RUN useradd -m -s /bin/zsh -u 1000 dev && \
+    echo "dev ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
-USER vscode
-WORKDIR /home/vscode
+USER dev
+WORKDIR /home/dev
 
 # Install uv (Python package manager)
 RUN curl -LsSf https://astral.sh/uv/install.sh | sh
-ENV PATH="/home/vscode/.local/bin:$PATH"
+ENV PATH="/home/dev/.local/bin:$PATH"
 
 # Install fnm (Fast Node Manager)
 RUN curl -fsSL https://fnm.vercel.app/install | bash
-ENV PATH="/home/vscode/.local/share/fnm:$PATH"
+ENV PATH="/home/dev/.local/share/fnm:$PATH"
 
 # Install direnv
 RUN curl -sfL https://direnv.net/install.sh | bash
-RUN mkdir -p /home/vscode/.config/direnv
+RUN mkdir -p /home/dev/.config/direnv
 
 # Create standard directories
 RUN mkdir -p \
-    /home/vscode/.config \
-    /home/vscode/.local/bin \
-    /home/vscode/.local/share \
-    /home/vscode/.cache
+    /home/dev/.config \
+    /home/dev/.local/bin \
+    /home/dev/.local/share \
+    /home/dev/.cache
 
 # Set up zsh as default shell
 ENV SHELL=/bin/zsh
 
-WORKDIR /workspace
+WORKDIR /workspace-nbry-libs
 
 CMD ["/bin/zsh"]

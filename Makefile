@@ -1,5 +1,10 @@
+.PHONY: setup run lint test clean format
+
+setup:
+	uv sync
+
 run:
-	uvicorn nbry_lifting_website.app:app --reload
+	uv run uvicorn nbry_lifting_website.app:app --reload
 
 lint:
 	uv run ruff check .

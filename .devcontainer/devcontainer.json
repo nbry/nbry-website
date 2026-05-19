@@ -1,8 +1,10 @@
 {
-  "name": "Lifting Website Dev",
+  "name": "nbry libs",
   "dockerComposeFile": "docker-compose.yml",
-  "service": "app",
-  "workspaceFolder": "/workspace",
+  "service": "system",
+  "workspaceFolder": "/workspace-nbry-libs",
+  "shutdownAction": "none",
+  "containerUser": "dev",
 
   // Run setup script after container is created
   "postCreateCommand": "bash .devcontainer/setup.sh",
@@ -34,7 +36,7 @@
             "path": "/bin/zsh"
           }
         },
-        "python.defaultInterpreterPath": "/workspace/.venv/bin/python",
+        "python.defaultInterpreterPath": "/workspace-nbry-libs/.venv/bin/python",
         "python.terminal.activateEnvironment": false,
         "[python]": {
           "editor.defaultFormatter": "charliermarsh.ruff",
@@ -65,7 +67,7 @@
   },
 
   // Container user
-  "remoteUser": "vscode",
+  "remoteUser": "dev",
 
   // Features to install
   "features": {

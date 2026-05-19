@@ -8,7 +8,7 @@ DOTFILES_REPO_HTTPS="${DOTFILES_REPO_HTTPS:-https://github.com/nbry/dotfiles.git
 DOTFILES_REPO_SSH="${DOTFILES_REPO_SSH:-git@github.com:nbry/dotfiles.git}"
 DOTSETUP_BIN="$DOTFILES_DIR/bin/dotsetup"
 ZSHRC="$HOME/.zshrc"
-WORKSPACE_DIR="/workspace"
+WORKSPACE_DIR="/workspace-nbry-libs"
 
 DOTSETUP_APPLIED=false
 
