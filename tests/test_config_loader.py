@@ -6,7 +6,7 @@ from typing import Any
 
 import pytest
 
-from nbry_lifting_website.lib.config_loader import ConfigLoader
+from nbry_website.shared.config_loader import ConfigLoader
 
 
 class TestConfigLoaderInit:
@@ -14,15 +14,15 @@ class TestConfigLoaderInit:
 
     def test_init_with_valid_directory(self):
         """ConfigLoader initializes with valid directory path."""
-        config_dir = Path("src/nbry_lifting_website/configs")
+        config_dir = Path("src/nbry_website/sites/lifting/configs")
         loader = ConfigLoader(config_dir)
         assert loader.config_dir == config_dir
 
     def test_init_with_string_path(self):
         """ConfigLoader accepts string path and converts to Path."""
-        loader = ConfigLoader("src/nbry_lifting_website/configs")
+        loader = ConfigLoader("src/nbry_website/sites/lifting/configs")
         assert isinstance(loader.config_dir, Path)
-        assert loader.config_dir == Path("src/nbry_lifting_website/configs")
+        assert loader.config_dir == Path("src/nbry_website/sites/lifting/configs")
 
     def test_init_with_nonexistent_directory(self):
         """ConfigLoader raises FileNotFoundError for nonexistent directory."""
@@ -44,7 +44,7 @@ class TestConfigLoaderLoad:
     @pytest.fixture
     def loader(self) -> ConfigLoader:
         """Fixture providing ConfigLoader with actual config directory."""
-        return ConfigLoader("src/nbry_lifting_website/configs")
+        return ConfigLoader("src/nbry_website/sites/lifting/configs")
 
     def test_load_program_toml(self, loader: ConfigLoader):
         """Load program.toml and verify structure."""
@@ -115,7 +115,7 @@ class TestConfigLoaderDataStructure:
     @pytest.fixture
     def loader(self) -> ConfigLoader:
         """Fixture providing ConfigLoader."""
-        return ConfigLoader("src/nbry_lifting_website/configs")
+        return ConfigLoader("src/nbry_website/sites/lifting/configs")
 
     def test_block_contains_days_with_exercises(self, loader: ConfigLoader):
         """Block files contain days with exercises."""

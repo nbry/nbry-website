@@ -1,0 +1,733 @@
+/* ========================================
+   CSS Custom Properties (Theme Variables)
+   ======================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600;700&display=swap");
+
+:root {
+  /* Colors - Dark IDE Theme */
+  --color-bg: #1e1e1e;
+  --color-bg-secondary: #252526;
+  --color-text: #d4d4d4;
+  --color-text-secondary: #858585;
+  --color-border: #3e3e42;
+  --color-accent: #4ec9b0;
+  --color-accent-hover: #6dd0d0;
+  --color-focus: #007acc;
+
+  /* Syntax Colors - More vibrant */
+  --color-syntax-string: #51cf66;
+  --color-syntax-keyword: #f97316;
+  --color-syntax-function: #fbbf24;
+  --color-syntax-tag: #ef4444;
+  --color-syntax-attr: #4ec9b0;
+  --color-syntax-number: #fbbf24;
+  --color-syntax-comment: #6a9955;
+  --color-syntax-class: #ef4444;
+
+  /* Typography */
+  --font-family-base: "Roboto Mono", "Courier New", monospace;
+  --font-family-mono: "Roboto Mono", "Courier New", monospace;
+  --font-size-base: 15px;
+  --font-size-sm: 13px;
+  --font-size-lg: 17px;
+  --font-size-xl: 18px;
+  --line-height-base: 1.6;
+  --line-height-heading: 1.2;
+
+  /* Spacing (8px base unit) */
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+
+  /* Transitions */
+  --transition-base: 200ms ease-in-out;
+}
+
+/* ========================================
+   Reset & Normalize
+   ======================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: var(--font-size-base);
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+/* ========================================
+   Skip Link (Accessibility)
+   ======================================== */
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--color-accent);
+  color: white;
+  padding: var(--space-md);
+  text-decoration: none;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* ========================================
+   Typography
+   ======================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: var(--line-height-heading);
+  margin-top: var(--space-lg);
+  margin-bottom: var(--space-md);
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  color: var(--color-syntax-function);
+  font-weight: 700;
+}
+
+h2:first-of-type {
+  margin-top: 0;
+}
+
+h3 {
+  font-size: 1.25rem;
+  font-family: var(--font-family-mono);
+  background-color: var(--color-bg-secondary);
+  padding: var(--space-sm) var(--space-md);
+  border-left: 3px solid var(--color-syntax-class);
+  color: var(--color-syntax-class);
+}
+
+h4 {
+  font-size: 1.1rem;
+  font-family: var(--font-family-mono);
+  color: var(--color-syntax-attr);
+}
+
+p {
+  margin-bottom: var(--space-md);
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+
+a:hover {
+  color: var(--color-accent-hover);
+  text-decoration: underline;
+}
+
+a:focus {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* ========================================
+   Code & Pre-formatted Text
+   ======================================== */
+
+code {
+  background-color: var(--color-bg-secondary);
+  color: var(--color-syntax-string);
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-family: var(--font-family-mono);
+  font-size: 0.9em;
+}
+
+pre {
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  padding: var(--space-md);
+  overflow-x: auto;
+  margin: var(--space-md) 0;
+  line-height: 1.5;
+}
+
+pre code {
+  background-color: transparent;
+  color: var(--color-text);
+  padding: 0;
+  font-size: 0.95em;
+}
+
+/* Syntax highlighting classes */
+.syntax-keyword {
+  color: var(--color-syntax-keyword);
+}
+
+.syntax-string {
+  color: var(--color-syntax-string);
+}
+
+.syntax-function {
+  color: var(--color-syntax-function);
+}
+
+.syntax-tag {
+  color: var(--color-syntax-tag);
+}
+
+.syntax-attr {
+  color: var(--color-syntax-attr);
+}
+
+.syntax-number {
+  color: var(--color-syntax-number);
+}
+
+.syntax-comment {
+  color: var(--color-syntax-comment);
+}
+
+/* ========================================
+   Layout (Header, Main, Footer)
+   ======================================== */
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: var(--space-xl) var(--space-md);
+}
+
+/* ========================================
+   Sidebar & Table of Contents
+   ======================================== */
+
+.page-with-sidebar {
+  display: flex;
+  gap: var(--space-lg);
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.sidebar {
+  display: none;
+  flex: 0 0 150px;
+}
+
+.toc {
+  position: fixed;
+  top: 180px;
+  left: 50%;
+  transform: translateX(calc(-50% + 327px));
+  width: 150px;
+  border-left: 2px solid var(--color-border);
+  padding-left: var(--space-md);
+}
+
+.toc h3 {
+  margin-top: 0;
+  font-size: 0.85rem;
+  margin-bottom: var(--space-md);
+  color: var(--color-text-secondary);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.toc ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.toc li {
+  margin-bottom: var(--space-sm);
+}
+
+.toc a {
+  font-size: 0.9rem;
+  display: block;
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: 4px;
+}
+
+.toc a:hover {
+  background-color: var(--color-bg-secondary);
+  text-decoration: none;
+}
+
+.main-with-toc {
+  flex: 1;
+  min-width: 0;
+}
+
+h2 {
+  scroll-margin-top: 80px;
+}
+
+/* ========================================
+   Header & Navigation
+   ======================================== */
+
+header {
+  background-color: var(--color-bg-secondary);
+  border-bottom: 1px solid var(--color-border);
+  padding: 0.25rem var(--space-md);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.header-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 var(--space-md);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.75rem;
+  flex: 1;
+  text-align: center;
+}
+
+nav {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  padding: 0 var(--space-md);
+}
+
+nav a {
+  padding: var(--space-xs) var(--space-md);
+  border-radius: 4px;
+  transition:
+    background-color var(--transition-base),
+    color var(--transition-base);
+  display: inline-block;
+  vertical-align: middle;
+}
+
+nav a:hover {
+  background-color: var(--color-bg);
+  text-decoration: none;
+}
+
+nav a:focus {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+/* ========================================
+   Navigation Toggle (Mobile Hamburger)
+   ======================================== */
+
+.nav-toggle {
+  display: none;
+}
+
+.nav-label {
+  display: none;
+  cursor: pointer;
+  padding: var(--space-sm);
+  border-radius: 4px;
+  transition: background-color var(--transition-base);
+  line-height: 0;
+}
+
+.nav-label svg {
+  color: var(--color-text);
+  transition: color var(--transition-base);
+}
+
+.nav-label:hover {
+  background-color: var(--color-border);
+}
+
+.nav-label:hover svg {
+  color: var(--color-accent);
+}
+
+/* ========================================
+   Dropdown Navigation
+   ======================================== */
+
+.nav-dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
+  display: none;
+}
+
+.nav-dropdown-toggle {
+  background: none;
+  border: none;
+  color: var(--color-accent);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  cursor: pointer;
+  padding: var(--space-xs) var(--space-md);
+  border-radius: 4px;
+  transition:
+    background-color var(--transition-base),
+    color var(--transition-base);
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.dropdown-arrow {
+  font-size: 0.8em;
+  transition: transform var(--transition-base);
+  margin-left: 0.25rem;
+}
+
+.nav-dropdown-toggle:hover {
+  background-color: var(--color-bg);
+  color: var(--color-accent-hover);
+  text-decoration: none;
+}
+
+.nav-dropdown-toggle:focus {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+.nav-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  min-width: 180px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  z-index: 100;
+}
+
+.nav-dropdown-menu a {
+  display: block;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: 0;
+  border-bottom: 1px solid var(--color-border);
+  transition:
+    background-color var(--transition-base),
+    color var(--transition-base);
+}
+
+.nav-dropdown-menu a:last-child {
+  border-bottom: none;
+}
+
+.nav-dropdown-menu a:hover {
+  background-color: var(--color-bg);
+  color: var(--color-accent);
+}
+
+/* Desktop: hover to show dropdown */
+@media (min-width: 951px) {
+  .nav-dropdown {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .nav-dropdown:hover .nav-dropdown-menu {
+    display: block;
+  }
+
+  .nav-dropdown:hover .dropdown-arrow {
+    transform: rotate(180deg);
+  }
+}
+
+/* ========================================
+   Lists
+   ======================================== */
+
+ul,
+ol {
+  margin: var(--space-md) 0;
+  padding-left: 2em;
+}
+
+li {
+  margin-bottom: var(--space-sm);
+}
+
+/* ========================================
+   Tables
+   ======================================== */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--space-lg) 0;
+  background-color: var(--color-bg-secondary);
+}
+
+caption {
+  text-align: left;
+  margin-bottom: var(--space-md);
+  font-weight: 600;
+  font-size: var(--font-size-lg);
+}
+
+th,
+td {
+  padding: var(--space-md);
+  text-align: left;
+  border-bottom: 1px solid var(--color-border);
+}
+
+th {
+  background-color: var(--color-bg-secondary);
+  font-weight: 600;
+  border-bottom: 2px solid var(--color-border);
+}
+
+tbody tr:nth-child(even) {
+  background-color: var(--color-bg);
+}
+
+/* ========================================
+   Sections & Articles
+   ======================================== */
+
+section {
+  margin-bottom: var(--space-2xl);
+}
+
+article {
+  margin-bottom: var(--space-lg);
+  padding: var(--space-lg);
+  background-color: var(--color-bg-secondary);
+  border-radius: 4px;
+}
+
+/* ========================================
+   Footer
+   ======================================== */
+
+footer {
+  background-color: var(--color-bg-secondary);
+  border-top: 1px solid var(--color-border);
+  padding: var(--space-lg) var(--space-md);
+  text-align: center;
+  margin-top: var(--space-2xl);
+  color: var(--color-text-secondary);
+}
+
+/* ========================================
+   Responsive Design (Mobile-First)
+   ======================================== */
+
+@media (max-width: 950px) {
+  .nav-label {
+    display: block;
+    order: 2;
+  }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    align-items: flex-end;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: auto;
+    background-color: var(--color-bg-secondary);
+    border-bottom: 1px solid var(--color-border);
+    gap: 0;
+    z-index: 40;
+    min-width: 200px;
+  }
+
+  nav a {
+    width: 100%;
+    text-align: left;
+    padding: var(--space-md);
+    border-radius: 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  nav a:last-child {
+    border-bottom: none;
+  }
+
+  .nav-toggle:checked ~ nav {
+    display: flex;
+  }
+
+  /* Dropdown styles for mobile */
+  .nav-dropdown {
+    display: block;
+    width: 100%;
+  }
+
+  .nav-dropdown-toggle {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: var(--space-md);
+    border-radius: 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .nav-dropdown-menu {
+    position: static;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    background-color: var(--color-bg);
+    margin-top: 0;
+  }
+
+  .nav-dropdown-menu a {
+    padding-right: var(--space-xl);
+  }
+
+  .dropdown-toggle:checked ~ .nav-dropdown-menu {
+    display: block;
+  }
+
+  .dropdown-toggle:checked ~ .nav-dropdown-toggle .dropdown-arrow {
+    transform: rotate(180deg);
+  }
+}
+
+/* Tablet breakpointx */
+@media (min-width: 951px) {
+  :root {
+    --font-size-base: 17px;
+  }
+
+  .nav-label {
+    display: none;
+  }
+
+  nav {
+    display: flex !important;
+    position: static;
+    flex-direction: row;
+    background-color: transparent;
+    border-bottom: none;
+    gap: var(--space-lg);
+  }
+
+  nav a {
+    padding: var(--space-sm) var(--space-lg);
+    border-bottom: none;
+  }
+
+  h1 {
+    font-size: 2.25rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+    scroll-margin-top: 160px;
+  }
+
+  main {
+    padding: var(--space-2xl) var(--space-xl);
+  }
+
+  header {
+    padding: 0.25rem var(--space-lg);
+  }
+
+  .header-container {
+    margin-bottom: 0;
+  }
+}
+
+/* Desktop breakpoint: 1024px */
+@media (min-width: 1024px) {
+  main {
+    padding: var(--space-2xl);
+  }
+
+  header {
+    padding: var(--space-lg) var(--space-md);
+  }
+
+  nav {
+    gap: var(--space-xl);
+  }
+
+  .sidebar {
+    display: block;
+    order: 2;
+  }
+}
+
+/* Print styles */
+@media print {
+  header,
+  footer {
+    display: none;
+  }
+
+  body {
+    background-color: #ffffff;
+    color: #000000;
+  }
+
+  a {
+    color: #0066cc;
+  }
+
+  main {
+    max-width: 100%;
+  }
+
+  code,
+  pre {
+    background-color: #f5f5f5;
+    color: #000000;
+  }
+}

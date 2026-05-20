@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}Home{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='css/main.css') }}" />
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <h1>NBRY Lifting</h1>
+        <label for="nav-toggle" class="nav-label" aria-label="Toggle navigation menu">
+          <svg
+            width="32"
+            height="32"
+            viewBox="0 0 32 32"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M5 8h22M5 16h22M5 24h22"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+            />
+          </svg>
+        </label>
+      </div>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+      <nav aria-label="Main navigation">
+        <a href="/">Home</a>
+        <span class="nav-dropdown">
+          <input type="checkbox" id="program-dropdown" class="dropdown-toggle" />
+          <label for="program-dropdown" class="nav-dropdown-toggle">
+            Program <span class="dropdown-arrow">▾</span>
+          </label>
+          <div class="nav-dropdown-menu">
+            <a href="/philosophy">Philosophy</a>
+            <a href="/instructions">Instructions</a>
+            <a href="/equipment">Equipment</a>
+          </div>
+        </span>
+        <a href="/faq">FAQ</a>
+        <a href="/resources">Resources</a>
+        <a href="/links">Links</a>
+        <a href="/changelog">Changelog</a>
+      </nav>
+    </header>
+
+    <main id="main-content">{% block content %}{% endblock %}</main>
+
+    <footer>
+      <p>&copy; 2026 NBRY Lifting. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

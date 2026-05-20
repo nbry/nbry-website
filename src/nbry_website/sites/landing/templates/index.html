@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NBRY</title>
+    <link rel="stylesheet" href="/static/css/main.css">
+</head>
+<body>
+    <div class="landing-container">
+        <header class="landing-header">
+            <h1>NBRY</h1>
+            <p class="tagline">Building better systems for strength, coffee, and career</p>
+        </header>
+
+        <main class="sites-grid">
+            {% for site in sites %}
+            <div class="site-card {% if site.coming_soon %}coming-soon{% endif %}">
+                <div class="site-icon">{{ site.icon }}</div>
+                <h2>{{ site.name }}</h2>
+                <p>{{ site.description }}</p>
+                {% if site.coming_soon %}
+                    <span class="badge">Coming Soon</span>
+                {% else %}
+                    <a href="{{ site.url }}" class="button">Visit Site →</a>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </main>
+
+        <footer class="landing-footer">
+            <p>&copy; 2026 NBRY. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
