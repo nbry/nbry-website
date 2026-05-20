@@ -4,12 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{% block title %}Home{% endblock %}</title>
-    <link rel="stylesheet" href="{{ url_for('static', path='css/main.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('shared', path='css/base.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', path='css/lifting.css') }}" />
   </head>
   <body>
     <header>
       <div class="header-container">
-        <h1>NBRY Lifting</h1>
+        <h1>nbry lifting</h1>
         <label for="nav-toggle" class="nav-label" aria-label="Toggle navigation menu">
           <svg
             width="32"

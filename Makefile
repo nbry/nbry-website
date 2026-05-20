@@ -33,26 +33,41 @@ install: setup
 
 # Run commands
 run:
+	@echo "⚠️  Note: Subdomain routing requires local domain setup"
+	@echo "For local dev, use: make run-landing, make run-lifting, or make run-mycareer"
+	@echo ""
 	uv run uvicorn nbry_website.main:app --reload --host 0.0.0.0 --port 8000
 
 run-master: run
 
 run-landing:
-	uv run uvicorn nbry_website.sites.landing.app:app --reload --port 8000
+	uv run uvicorn nbry_website.sites.landing.app:app --reload --port 8000 \
+		--reload-dir src/nbry_website/sites/landing \
+		--reload-dir src/nbry_website/shared
 
 run-lifting:
-	uv run uvicorn nbry_website.sites.lifting.app:app --reload --port 8001
+	uv run uvicorn nbry_website.sites.lifting.app:app --reload --port 8001 \
+		--reload-dir src/nbry_website/sites/lifting \
+		--reload-dir src/nbry_website/shared
 
 run-mycareer:
-	uv run uvicorn nbry_website.sites.mycareer.app:app --reload --port 8003
+	uv run uvicorn nbry_website.sites.mycareer.app:app --reload --port 8003 \
+		--reload-dir src/nbry_website/sites/mycareer \
+		--reload-dir src/nbry_website/shared
 
 run-dev:
-	@echo "Starting landing (8000) and lifting (8001) sites..."
-	@echo "Press Ctrl+C to stop both"
+	@echo "Starting landing (8000), lifting (8001), and mycareer (8003) sites..."
+	@echo "Press Ctrl+C to stop all"
 	@trap 'kill 0' INT; \
-	uv run uvicorn nbry_website.sites.landing.app:app --reload --port 8000 & \
-	uv run uvicorn nbry_website.sites.lifting.app:app --reload --port 8001 & \
-	uv run uvicorn nbry_website.sites.mycareer.app:app --reload --port 8003 & \
+	uv run uvicorn nbry_website.sites.landing.app:app --reload --port 8000 \
+		--reload-dir src/nbry_website/sites/landing \
+		--reload-dir src/nbry_website/shared & \
+	uv run uvicorn nbry_website.sites.lifting.app:app --reload --port 8001 \
+		--reload-dir src/nbry_website/sites/lifting \
+		--reload-dir src/nbry_website/shared & \
+	uv run uvicorn nbry_website.sites.mycareer.app:app --reload --port 8003 \
+		--reload-dir src/nbry_website/sites/mycareer \
+		--reload-dir src/nbry_website/shared & \
 	wait
 
 # Development tools

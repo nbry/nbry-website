@@ -145,6 +145,72 @@ code {
   font-size: 0.9em;
 }
 
+pre {
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  padding: var(--space-md);
+  overflow-x: auto;
+  margin: var(--space-md) 0;
+  line-height: 1.5;
+}
+
+pre code {
+  background-color: transparent;
+  color: var(--color-text);
+  padding: 0;
+  font-size: 0.95em;
+}
+
+/* ========================================
+   Lists
+   ======================================== */
+
+ul,
+ol {
+  margin: var(--space-md) 0;
+  padding-left: 2em;
+}
+
+li {
+  margin-bottom: var(--space-sm);
+}
+
+/* ========================================
+   Tables
+   ======================================== */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--space-lg) 0;
+  background-color: var(--color-bg-secondary);
+}
+
+caption {
+  text-align: left;
+  margin-bottom: var(--space-md);
+  font-weight: 600;
+  font-size: var(--font-size-lg);
+}
+
+th,
+td {
+  padding: var(--space-md);
+  text-align: left;
+  border-bottom: 1px solid var(--color-border);
+}
+
+th {
+  background-color: var(--color-bg-secondary);
+  font-weight: 600;
+  border-bottom: 2px solid var(--color-border);
+}
+
+tbody tr:nth-child(even) {
+  background-color: var(--color-bg);
+}
+
 /* ========================================
    Layout
    ======================================== */
@@ -152,7 +218,7 @@ code {
 main {
   flex: 1;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: var(--space-xl);
 }
@@ -168,33 +234,92 @@ section {
 header {
   background-color: var(--color-bg-secondary);
   border-bottom: 1px solid var(--color-border);
-  padding: var(--space-md) var(--space-xl);
+  padding: 0.25rem var(--space-md);
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 50;
+}
+
+.header-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 var(--space-md);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.75rem;
+  flex: 1;
+  text-align: center;
+  color: var(--color-accent);
 }
 
 nav {
+  max-width: 1100px;
+  margin: 0 auto;
   display: flex;
-  gap: var(--space-lg);
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  gap: var(--space-md);
+  padding: 0 var(--space-md);
 }
 
 nav a {
   color: var(--color-text);
+  padding: var(--space-xs) var(--space-md);
+  border-radius: 4px;
   font-weight: 500;
-  transition: color var(--transition-base);
-  padding: var(--space-xs) 0;
+  transition:
+    background-color var(--transition-base),
+    color var(--transition-base);
+  display: inline-block;
+  vertical-align: middle;
 }
 
 nav a:hover {
+  background-color: var(--color-bg-tertiary);
   color: var(--color-accent);
+  text-decoration: none;
 }
 
-nav a.active {
+nav a:focus {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+/* ========================================
+   Navigation Toggle (Mobile Hamburger)
+   ======================================== */
+
+.nav-toggle {
+  display: none;
+}
+
+.nav-label {
+  display: none;
+  cursor: pointer;
+  padding: var(--space-sm);
+  border-radius: 4px;
+  transition: background-color var(--transition-base);
+  line-height: 0;
+}
+
+.nav-label svg {
+  color: var(--color-text);
+  transition: color var(--transition-base);
+}
+
+.nav-label:hover {
+  background-color: var(--color-border);
+}
+
+.nav-label:hover svg {
   color: var(--color-accent);
-  border-bottom: 2px solid var(--color-accent);
 }
 
 /* ========================================
@@ -240,18 +365,6 @@ footer {
   outline-offset: 2px;
 }
 
-.btn-secondary {
-  background-color: var(--color-bg-tertiary);
-  color: var(--color-text);
-  border: 1px solid var(--color-border);
-}
-
-.btn-secondary:hover {
-  background-color: var(--color-bg-secondary);
-  color: var(--color-text);
-  border-color: var(--color-accent);
-}
-
 /* ========================================
    Responsive Design
    ======================================== */
@@ -265,8 +378,32 @@ footer {
     padding: var(--space-md);
   }
 
-  header {
+  .nav-label {
+    display: block;
+  }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
     padding: var(--space-md);
+    gap: 0;
+  }
+
+  .nav-toggle:checked ~ nav {
+    display: flex;
+  }
+
+  nav a {
+    width: 100%;
+    text-align: left;
+    padding: var(--space-md);
+    border-bottom: 1px solid var(--color-border);
+    border-radius: 0;
+  }
+
+  nav a:last-child {
+    border-bottom: none;
   }
 
   h1 {
@@ -275,9 +412,5 @@ footer {
 
   h2 {
     font-size: 1.5rem;
-  }
-
-  nav {
-    gap: var(--space-md);
   }
 }

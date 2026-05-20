@@ -34,5 +34,13 @@ app.mount(
     name="static",
 )
 
+# Mount shared static files
+SHARED_DIR = SITE_DIR.parent.parent / "shared"
+app.mount(
+    "/shared",
+    StaticFiles(directory=str(SHARED_DIR / "static")),
+    name="shared",
+)
+
 # Include routes
 app.include_router(routes.router)

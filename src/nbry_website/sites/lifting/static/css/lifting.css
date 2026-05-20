@@ -1,0 +1,248 @@
+/* ========================================
+   Lifting Site Specific Styles
+   ======================================== */
+
+/* Main content narrower for better readability */
+main {
+  max-width: 900px;
+}
+
+/* Offset anchor scroll for sticky header */
+h2 {
+  scroll-margin-top: 80px;
+}
+
+/* ========================================
+   Sidebar & Table of Contents
+   ======================================== */
+
+.page-with-sidebar {
+  display: flex;
+  gap: var(--space-lg);
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.sidebar {
+  display: none;
+  flex: 0 0 150px;
+}
+
+.toc {
+  position: fixed;
+  top: 180px;
+  left: 50%;
+  transform: translateX(calc(-50% + 327px));
+  width: 150px;
+  border-left: 2px solid var(--color-border);
+  padding-left: var(--space-md);
+}
+
+.toc h3 {
+  margin-top: 0;
+  font-size: 0.85rem;
+  margin-bottom: var(--space-md);
+  color: var(--color-text-secondary);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.toc ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.toc li {
+  margin-bottom: var(--space-sm);
+}
+
+.toc a {
+  font-size: 0.9rem;
+  display: block;
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: 4px;
+}
+
+.toc a:hover {
+  background-color: var(--color-bg-secondary);
+  text-decoration: none;
+}
+
+.main-with-toc {
+  flex: 1;
+  min-width: 0;
+}
+
+/* ========================================
+   Dropdown Navigation (Lifting-specific)
+   ======================================== */
+
+.nav-dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
+  display: none;
+}
+
+.nav-dropdown-toggle {
+  background: none;
+  border: none;
+  color: var(--color-accent);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  cursor: pointer;
+  padding: var(--space-xs) var(--space-md);
+  border-radius: 4px;
+  transition:
+    background-color var(--transition-base),
+    color var(--transition-base);
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.dropdown-arrow {
+  font-size: 0.8em;
+  transition: transform var(--transition-base);
+  margin-left: 0.25rem;
+}
+
+.nav-dropdown-toggle:hover {
+  background-color: var(--color-bg);
+  color: var(--color-accent-hover);
+  text-decoration: none;
+}
+
+.nav-dropdown-toggle:focus {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+.nav-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  min-width: 180px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  z-index: 100;
+}
+
+.nav-dropdown-menu a {
+  display: block;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: 0;
+  border-bottom: 1px solid var(--color-border);
+  transition:
+    background-color var(--transition-base),
+    color var(--transition-base);
+}
+
+.nav-dropdown-menu a:last-child {
+  border-bottom: none;
+}
+
+.nav-dropdown-menu a:hover {
+  background-color: var(--color-bg);
+  color: var(--color-accent);
+}
+
+/* Desktop: hover to show dropdown */
+@media (min-width: 951px) {
+  .nav-dropdown {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .nav-dropdown:hover .nav-dropdown-menu {
+    display: block;
+  }
+
+  .nav-dropdown:hover .dropdown-arrow {
+    transform: rotate(180deg);
+  }
+}
+
+/* ========================================
+   Responsive Design (Lifting-specific)
+   ======================================== */
+
+/* Mobile: Dropdown styles */
+@media (max-width: 950px) {
+  .nav-dropdown {
+    display: block;
+    width: 100%;
+  }
+
+  .nav-dropdown-toggle {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: var(--space-md);
+    border-radius: 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .nav-dropdown-menu {
+    position: static;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    background-color: var(--color-bg);
+    margin-top: 0;
+  }
+
+  .nav-dropdown-menu a {
+    padding-left: var(--space-xl);
+  }
+
+  .dropdown-toggle:checked ~ .nav-dropdown-menu {
+    display: block;
+  }
+
+  .dropdown-toggle:checked ~ .nav-dropdown-toggle .dropdown-arrow {
+    transform: rotate(180deg);
+  }
+}
+
+/* Tablet/Desktop: Larger content font, keep nav compact */
+@media (min-width: 951px) {
+  :root {
+    --font-size-base: 17px;
+  }
+
+  /* Override larger font for nav to keep it compact */
+  nav {
+    font-size: 15px;
+  }
+
+  nav a {
+    font-size: 15px;
+  }
+
+  h2 {
+    scroll-margin-top: 160px;
+  }
+
+  main {
+    padding: var(--space-2xl) var(--space-xl);
+  }
+}
+
+/* Desktop: Sidebar and spacing */
+@media (min-width: 1024px) {
+  main {
+    padding: var(--space-2xl);
+  }
+
+  .sidebar {
+    display: block;
+    order: 2;
+  }
+}
