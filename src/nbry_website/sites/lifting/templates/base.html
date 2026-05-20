@@ -6,11 +6,19 @@
     <title>{% block title %}Home{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('shared', path='css/base.css') }}" />
     <link rel="stylesheet" href="{{ url_for('static', path='css/lifting.css') }}" />
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('shared', path='favicon.svg') }}" />
   </head>
   <body>
     <header>
       <div class="header-container">
-        <h1>nbry lifting</h1>
+        <h1>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" aria-label="nbry" role="img">
+            <text x="9" y="11" font-family="Georgia, 'Times New Roman', serif" font-size="18" font-weight="700" fill="#ef4444" text-anchor="middle" dominant-baseline="central">n</text>
+            <text x="23" y="11" font-family="Georgia, 'Times New Roman', serif" font-size="18" font-weight="700" fill="#fbbf24" text-anchor="middle" dominant-baseline="central">b</text>
+            <text x="9" y="21" font-family="Georgia, 'Times New Roman', serif" font-size="18" font-weight="700" fill="#51cf66" text-anchor="middle" dominant-baseline="central">r</text>
+            <text x="23" y="21" font-family="Georgia, 'Times New Roman', serif" font-size="18" font-weight="700" fill="#c084fc" text-anchor="middle" dominant-baseline="central">y</text>
+          </svg> lifting
+        </h1>
         <label for="nav-toggle" class="nav-label" aria-label="Toggle navigation menu">
           <svg
             width="32"

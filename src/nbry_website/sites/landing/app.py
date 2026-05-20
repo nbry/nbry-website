@@ -18,6 +18,14 @@ templates = Jinja2Templates(directory=str(SITE_DIR / "templates"))
 # Mount static files
 app.mount("/static", StaticFiles(directory=str(SITE_DIR / "static")), name="static")
 
+# Mount shared static files
+SHARED_DIR = SITE_DIR.parent.parent / "shared"
+app.mount(
+    "/shared",
+    StaticFiles(directory=str(SHARED_DIR / "static")),
+    name="shared",
+)
+
 
 @app.get("/", response_class=HTMLResponse)
 async def landing(request: Request):

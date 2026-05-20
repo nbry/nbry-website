@@ -17,6 +17,13 @@ h2:first-of-type {
   margin-top: 0;
 }
 
+header h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
 /* Colorful H3 headings with left border accent */
 h3 {
   font-size: 1.25rem;
