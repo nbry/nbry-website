@@ -224,41 +224,6 @@ h2 {
   font-size: var(--font-size-sm);
 }
 
-/* Contact Section */
-.contact-section {
-  text-align: center;
-  padding: var(--space-2xl) 0;
-}
-
-.contact-methods {
-  display: flex;
-  justify-content: center;
-  gap: var(--space-xl);
-  flex-wrap: wrap;
-  margin-top: var(--space-lg);
-}
-
-.contact-method {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-xs);
-}
-
-.contact-method .label {
-  color: var(--color-text-secondary);
-  font-size: var(--font-size-sm);
-}
-
-.contact-method a {
-  color: var(--color-syntax-attr);
-  font-weight: 500;
-}
-
-.contact-method a:hover {
-  color: var(--color-syntax-string);
-}
-
 /* Download Resume Button */
 .download-resume {
   position: fixed;
@@ -324,17 +289,5 @@ h2 {
   /* Show mobile download button in hero */
   .download-resume-mobile {
     display: inline-block;
-  }
-
-  /* Hide achievement tags on mobile */
-  @media (max-width: 480px) {
-    .experience-achievements strong {
-      display: none;
-    }
-
-    /* Remove extra dash after hidden tag */
-    .experience-achievements li::after {
-      content: none;
-    }
   }
 }
