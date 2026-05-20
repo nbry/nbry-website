@@ -12,11 +12,11 @@ sets = [
 ]
 
 [[days.exercises]]
-exercise = "db_bench_press"
+exercise = "incline_barbell_bench"
 sets = [
-    { reps = 8, tune = 0.65 },
-    { reps = 8, tune = 0.65 },
-    { reps = 8, tune = 0.65 },
+    { reps = 6, tune = 0.60 },
+    { reps = 6, tune = 0.60 },
+    { reps = 6, tune = 0.60 },
 ]
 
 [[days.exercises]]
@@ -50,10 +50,10 @@ name = "Day 2"
 [[days.exercises]]
 exercise = "bench"
 sets = [
-    { reps = 5, tune = 0.85 },
-    { reps = 5, tune = 0.77 },
-    { reps = 5, tune = 0.77 },
-    { reps = 5, tune = 0.77 },
+    { reps = 5, tune = 0.80 },
+    { reps = 5, tune = 0.72 },
+    { reps = 5, tune = 0.72 },
+    { reps = 5, tune = 0.72 },
 ]
 
 [[days.exercises]]

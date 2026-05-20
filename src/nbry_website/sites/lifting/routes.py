@@ -1,15 +1,35 @@
 """Route handlers for the lifting site."""
 
 from pathlib import Path
+from typing import Any
 
 from fastapi import APIRouter, Request
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 
+from nbry_website.sites.lifting.lib.config_loader import ConfigLoader
+from nbry_website.sites.lifting.lib.program_utils import format_sets_display, get_display_name
+
 SITE_DIR = Path(__file__).parent
+CONFIGS_DIR = SITE_DIR / "configs"
 templates = Jinja2Templates(directory=str(SITE_DIR / "templates"))
 
 router = APIRouter()
+
+
+def _load_program(program_dir: str) -> dict[str, Any]:
+    loader = ConfigLoader(CONFIGS_DIR / program_dir)
+    exercises = ConfigLoader(CONFIGS_DIR).load("exercises.toml")
+    program = loader.load("program.toml")["program"]
+    for block in program["blocks"]:
+        block_data = loader.load(block["file"])
+        for day in block_data["days"]:
+            for exercise in day["exercises"]:
+                key = exercise["exercise"]
+                exercise["name_display"] = get_display_name(key, exercises)
+                exercise["sets_display"] = format_sets_display(exercise)
+        block["data"] = block_data
+    return program
 
 
 @router.get("/", response_class=HTMLResponse)
@@ -36,11 +56,33 @@ async def equipment(request: Request):
     )
 
 
-@router.get("/guide", response_class=HTMLResponse)
-async def guide(request: Request):
-    """Guide page of the website."""
+@router.get("/how-it-works", response_class=HTMLResponse)
+async def how_it_works(request: Request):
+    """Instructions for running the program."""
     return templates.TemplateResponse(
-        request=request, name="guide.html", context={"request": request}
+        request=request, name="how-it-works.html", context={"request": request}
+    )
+
+
+@router.get("/3-day-program", response_class=HTMLResponse)
+async def three_day_program(request: Request):
+    """3-day program workout schedule."""
+    program = _load_program("3-day-program")
+    return templates.TemplateResponse(
+        request=request,
+        name="3-day-program.html",
+        context={"request": request, "program": program},
+    )
+
+
+@router.get("/4-day-program", response_class=HTMLResponse)
+async def four_day_program(request: Request):
+    """4-day program workout schedule."""
+    program = _load_program("4-day-program")
+    return templates.TemplateResponse(
+        request=request,
+        name="4-day-program.html",
+        context={"request": request, "program": program},
     )
 
 

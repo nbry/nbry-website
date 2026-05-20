@@ -24,25 +24,13 @@ header h1 {
   gap: 0.5rem;
 }
 
-/* Colorful H3 headings with left border accent */
+/* H3 headings with left border accent */
 h3 {
   font-size: 1.25rem;
   font-family: var(--font-family-mono);
-  background-color: var(--color-bg-secondary);
-  padding: var(--space-sm) var(--space-md);
-  border-left: 3px solid var(--color-syntax-class);
-  color: var(--color-syntax-class);
-}
-
-/* Alternate H3 colors for variety */
-h3:nth-of-type(2n) {
-  border-left-color: var(--color-syntax-lavender);
-  color: var(--color-syntax-lavender);
-}
-
-h3:nth-of-type(3n) {
-  border-left-color: var(--color-syntax-string);
-  color: var(--color-syntax-string);
+  padding-left: var(--space-md);
+  border-left: 3px solid var(--color-syntax-keyword);
+  color: var(--color-syntax-keyword);
 }
 
 h4 {
@@ -389,7 +377,7 @@ ol li::marker {
 
 /* Strong/bold text with color */
 strong {
-  color: var(--color-syntax-function);
+  color: var(--color-syntax-lavender);
   font-weight: 600;
 }
 
@@ -420,4 +408,58 @@ tbody tr:nth-child(odd) {
 
 tbody tr:nth-child(even) {
   border-left: 2px solid var(--color-syntax-string);
+}
+
+/* Program tables */
+.table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: var(--space-md) 0 var(--space-xl);
+}
+
+.program-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 300px;
+  table-layout: fixed;
+}
+
+.program-table th:first-child,
+.program-table td:first-child {
+  width: 55%;
+}
+
+.program-table th:last-child,
+.program-table td:last-child {
+  width: 45%;
+}
+
+.program-table th,
+.program-table td {
+  padding: var(--space-sm) var(--space-md);
+  text-align: left;
+  vertical-align: middle;
+}
+
+.program-table td:first-child {
+  font-weight: 500;
+}
+
+.sets-cell {
+  color: var(--color-text-secondary);
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  white-space: nowrap;
+}
+
+.block-weeks {
+  font-size: 0.75em;
+  font-weight: 400;
+  color: var(--color-text-secondary);
+}
+
+.coming-soon {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  font-style: italic;
 }

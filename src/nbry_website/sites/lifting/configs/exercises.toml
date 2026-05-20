@@ -1,5 +1,6 @@
 [deadlift]
 calculation_mode = "training_max"
+display_name = "Deadlift"
 enabled = true
 equipment = "barbell"
 focus = "strength"
@@ -9,6 +10,7 @@ tier = "primary"
 
 [bench]
 calculation_mode = "training_max"
+display_name = "Bench Press"
 enabled = true
 equipment = "barbell"
 focus = "strength"
@@ -18,6 +20,7 @@ tier = "primary"
 
 [squat]
 calculation_mode = "training_max"
+display_name = "Squat"
 enabled = true
 equipment = "barbell"
 focus = "strength"
@@ -27,6 +30,7 @@ tier = "primary"
 
 [barbell_row]
 calculation_mode = "static"
+display_name = "Barbell Row"
 enabled = true
 equipment = "barbell"
 focus = "strength"
@@ -36,6 +40,7 @@ tier = "secondary"
 
 [ohp]
 calculation_mode = "static"
+display_name = "OHP"
 enabled = true
 equipment = "barbell"
 focus = "strength"
@@ -45,6 +50,7 @@ tier = "secondary"
 
 [pullups]
 calculation_mode = "static"
+display_name = "Pull-Ups"
 enabled = true
 equipment = "plate"
 focus = "strength"
@@ -54,6 +60,7 @@ tier = "secondary"
 
 [rdl]
 calculation_mode = "reference"
+display_name = "RDL"
 enabled = true
 equipment = "barbell"
 focus = "hypertrophy"
@@ -63,6 +70,7 @@ tier = "secondary"
 
 [db_bench_press]
 calculation_mode = "reference"
+display_name = "DB Bench Press"
 enabled = true
 equipment = "dumbbell"
 focus = "hypertrophy"
@@ -72,6 +80,7 @@ tier = "secondary"
 
 [db_row]
 calculation_mode = "static"
+display_name = "DB Row"
 enabled = true
 equipment = "dumbbell"
 focus = "hypertrophy"
@@ -79,8 +88,19 @@ increment = 5
 movement = "horizontal_pull"
 tier = "secondary"
 
+[incline_barbell_bench]
+calculation_mode = "reference"
+display_name = "Incline Barbell Bench"
+enabled = true
+equipment = "barbell"
+focus = "hypertrophy"
+movement = ["horizontal_press", "vertical_press"]
+reference_exercise = "bench"
+tier = "secondary"
+
 [lateral_raise]
 calculation_mode = "static"
+display_name = "Lateral Raise"
 enabled = true
 equipment = "dumbbell"
 focus = "hypertrophy"
@@ -90,6 +110,7 @@ tier = "tertiary"
 
 [wrist_extension]
 calculation_mode = "static"
+display_name = "Wrist Extension"
 enabled = true
 equipment = "dumbbell"
 focus = "hypertrophy"
@@ -99,6 +120,7 @@ tier = "tertiary"
 
 [wrist_curl]
 calculation_mode = "static"
+display_name = "Wrist Curl"
 enabled = true
 equipment = "dumbbell"
 focus = "hypertrophy"
@@ -108,6 +130,7 @@ tier = "tertiary"
 
 [calf_raise]
 calculation_mode = "static"
+display_name = "Calf Raise"
 enabled = true
 equipment = "barbell"
 focus = "hypertrophy"
@@ -117,6 +140,7 @@ tier = "tertiary"
 
 [ab_mat_situp]
 calculation_mode = "static"
+display_name = "Ab Mat Sit-Up"
 enabled = true
 equipment = "plate"
 focus = "hypertrophy"
@@ -126,6 +150,7 @@ tier = "tertiary"
 
 [lying_db_curl]
 calculation_mode = "static"
+display_name = "Lying DB Curl"
 enabled = true
 equipment = "dumbbell"
 focus = "hypertrophy"
@@ -135,6 +160,7 @@ tier = "tertiary"
 
 [preacher_curl]
 calculation_mode = "static"
+display_name = "Preacher Curl"
 enabled = true
 equipment = "freeweight"
 focus = "hypertrophy"
@@ -144,6 +170,7 @@ tier = "tertiary"
 
 [skullcrusher]
 calculation_mode = "static"
+display_name = "Skullcrusher"
 enabled = true
 equipment = "barbell"
 focus = "hypertrophy"
@@ -153,6 +180,7 @@ tier = "tertiary"
 
 [reverse_crunch]
 calculation_mode = "static"
+display_name = "Reverse Crunch"
 enabled = true
 equipment = "bodyweight"
 focus = "hypertrophy"

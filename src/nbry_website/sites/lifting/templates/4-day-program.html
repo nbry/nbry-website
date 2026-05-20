@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block title %}
+  4-Day Program - nbry Lifting
+{% endblock %}
+
+{% block content %}
+  <div class="page-with-sidebar">
+    <aside class="sidebar">
+      <nav class="toc">
+        <h3>On this page</h3>
+        <ul>
+          {% for block in program.blocks %}
+            <li>
+              <a href="#{{ block.data.name | lower }}">{{ block.data.name }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </aside>
+
+    <div class="main-with-toc">
+      <h2>4-Day Program</h2>
+      <p>{{ program.description }}</p>
+
+      {% for block in program.blocks %}
+        <section>
+          <h2 id="{{ block.data.name | lower }}">
+            {{ block.data.name }}
+            <span class="block-weeks">
+              —
+              {% if block.weeks | length > 1 %}Weeks {{ block.weeks[0] }}–{{ block.weeks[-1] }}{% else %}Week
+              {{ block.weeks[0] }}{% endif %}
+            </span>
+          </h2>
+
+          {% for day in block.data.days %}
+            <h3>{{ day.name }}</h3>
+            <div class="table-scroll">
+              <table class="program-table">
+                <thead>
+                  <tr>
+                    <th>Exercise</th>
+                    <th>Sets</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for exercise in day.exercises %}
+                    <tr>
+                      <td>{{ exercise.name_display }}</td>
+                      <td class="sets-cell">{{ exercise.sets_display }}</td>
+                    </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          {% endfor %}
+        </section>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}
