@@ -52,6 +52,7 @@ run-dev:
 	@trap 'kill 0' INT; \
 	uv run uvicorn nbry_website.sites.landing.app:app --reload --port 8000 & \
 	uv run uvicorn nbry_website.sites.lifting.app:app --reload --port 8001 & \
+	uv run uvicorn nbry_website.sites.mycareer.app:app --reload --port 8003 & \
 	wait
 
 # Development tools

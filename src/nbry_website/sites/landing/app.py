@@ -43,20 +43,20 @@ async def landing(request: Request):
                 {
                     "name": "Career",
                     "url": mycareer_url,
-                    "description": "Professional portfolio",
+                    "description": "My professional portfolio",
                     "icon": "💼",
                     "coming_soon": False,
                 },
                 {
                     "name": "Lifting",
                     "url": lifting_url,
-                    "description": "Strength training program and resources",
+                    "description": "The nbry powerbuilding program - training resources and guide",
                     "icon": "💪",
                 },
                 {
                     "name": "Coffee",
                     "url": coffee_url,
-                    "description": "Coffee brewing guides and reviews",
+                    "description": "My coffee brewing diary and experiments",
                     "icon": "☕",
                     "coming_soon": True,
                 },
