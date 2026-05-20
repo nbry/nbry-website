@@ -1,4 +1,4 @@
-"""Shared configuration for all NBRY sites."""
+"""Shared configuration for all nbry sites."""
 
 from enum import Enum
 

@@ -1,1 +1,1 @@
-"""Lifting site for NBRY."""
+"""Lifting site for nbry."""

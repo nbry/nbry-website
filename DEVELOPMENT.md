@@ -1,6 +1,6 @@
-# NBRY Multi-Site Platform
+# nbry Multi-Site Platform
 
-A collection of independent websites under the NBRY domain, built with FastAPI and subdomain routing.
+A collection of independent websites under the nbry domain, built with FastAPI and subdomain routing.
 
 ## Architecture Overview
 

@@ -20,7 +20,7 @@ async def lifespan(app: FastAPI):
 
 # Create site-specific app
 app = FastAPI(
-    title="NBRY Career",
+    title="nbry Career",
     description="Professional portfolio and resume",
     lifespan=lifespan,
 )

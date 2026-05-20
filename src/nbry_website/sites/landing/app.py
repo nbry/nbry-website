@@ -9,7 +9,7 @@ from fastapi.templating import Jinja2Templates
 
 from nbry_website.config import SiteSettings
 
-app = FastAPI(title="NBRY")
+app = FastAPI(title="nbry")
 site_settings = SiteSettings()
 
 SITE_DIR = Path(__file__).parent

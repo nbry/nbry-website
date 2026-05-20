@@ -1,1 +1,1 @@
-"""Shared utilities for NBRY sites."""
+"""Shared utilities for nbry sites."""

@@ -2,7 +2,7 @@
 
 # Default target
 help:
-	@echo "NBRY Multi-Site Platform - Available Commands"
+	@echo "nbry Multi-Site Platform - Available Commands"
 	@echo ""
 	@echo "Setup:"
 	@echo "  make setup          - Install dependencies with uv sync"

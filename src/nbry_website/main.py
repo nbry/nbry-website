@@ -14,7 +14,7 @@ from nbry_website.sites.lifting import app as lifting_app
 from nbry_website.sites.mycareer import app as mycareer_app
 
 # Master app (root)
-app = FastAPI(title="NBRY Multi-Site Platform")
+app = FastAPI(title="nbry Multi-Site Platform")
 site_settings = SiteSettings()
 
 

@@ -1,1 +1,1 @@
-"""NBRY sites package."""
+"""nbry sites package."""

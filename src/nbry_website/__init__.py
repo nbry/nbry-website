@@ -1,1 +1,1 @@
-"""NBRY multi-site platform."""
+"""nbry multi-site platform."""

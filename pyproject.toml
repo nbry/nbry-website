@@ -9,7 +9,7 @@ dependencies = [
   "sqlalchemy>=2.0.49",
   "tomli-w>=1.1.0",
 ]
-description = "Multi-site platform for NBRY content."
+description = "Multi-site platform for nbry content."
 name = "nbry_website"
 readme = "README.md"
 requires-python = ">=3.14"
