@@ -9,7 +9,7 @@ This project hosts multiple independent websites under a single deployment:
 - **nbry.com** - Main landing page with links to all sub-sites
 - **lifting.nbry.com** - Strength training program and resources
 - **coffee.nbry.com** - Coffee content (coming soon)
-- **career.nbry.com** - Career portfolio (coming soon)
+- **mycareer.nbry.com** - Career portfolio (coming soon)
 
 Each site is a self-contained FastAPI application with its own templates, static files, and routes. The master app uses subdomain-based routing to delegate requests to the appropriate site.
 
@@ -89,7 +89,7 @@ Test the full subdomain routing locally:
    127.0.0.1  nbry.local
    127.0.0.1  lifting.nbry.local
    127.0.0.1  coffee.nbry.local
-   127.0.0.1  career.nbry.local
+   127.0.0.1  mycareer.nbry.local
    ```
 
 2. Run the master app:
@@ -123,7 +123,7 @@ Environment variables are configured in `.env` (copy from `.env.example`):
 - `ALLOWED_SUBDOMAINS` - Comma-separated list of valid subdomains
 - `LIFTING_SITE_ENABLED` - Enable/disable lifting site
 - `COFFEE_SITE_ENABLED` - Enable/disable coffee site
-- `CAREER_SITE_ENABLED` - Enable/disable career site
+- `CAREER_SITE_ENABLED` - Enable/disable mycareer site
 
 ## How Subdomain Routing Works
 

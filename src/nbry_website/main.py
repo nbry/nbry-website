@@ -27,10 +27,10 @@ def get_site_apps() -> dict[str, FastAPI]:
         apps["lifting"] = lifting_app.app
 
     # Future sites will be added here when enabled
-    # if settings.coffee_site_enabled:
+    # if site_settings.coffee_site_enabled:
     #     apps["coffee"] = coffee_app.app
-    # if site_settings.career_site_enabled:
-    #     apps["career"] = career_app.app
+    # if site_settings.mycareer_site_enabled:
+    #     apps["mycareer"] = mycareer_app.app
 
     return apps
 
@@ -85,7 +85,7 @@ class SubdomainRoutingMiddleware(BaseHTTPMiddleware):
             "landing": f"{request.url.scheme}://{site_settings.base_domain}",
             "lifting": f"{request.url.scheme}://lifting.{site_settings.base_domain}",
             "coffee": f"{request.url.scheme}://coffee.{site_settings.base_domain}",
-            "career": f"{request.url.scheme}://career.{site_settings.base_domain}",
+            "mycareer": f"{request.url.scheme}://mycareer.{site_settings.base_domain}",
         }
 
         # Call the target app

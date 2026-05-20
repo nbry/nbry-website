@@ -2,6 +2,7 @@
 
 from enum import Enum
 
+from pydantic import field_validator
 from pydantic_settings import BaseSettings
 
 
@@ -27,12 +28,20 @@ class SiteSettings(BaseSettings):
     # Domains
     root_domain: str = "nbry.com"
     local_domain: str = "nbry.local"
-    allowed_subdomains: list[str] = ["career", "lifting", "coffee"]
+    allowed_subdomains: list[str] = ["mycareer", "lifting", "coffee"]
 
     # Site toggles
-    career_site_enabled: bool = False
+    mycareer_site_enabled: bool = False
     lifting_site_enabled: bool = True
     coffee_site_enabled: bool = False
+
+    @field_validator("allowed_subdomains", mode="before")
+    @classmethod
+    def parse_subdomains(cls, v: str | list[str]) -> list[str]:
+        """Parse comma-separated string or list."""
+        if isinstance(v, str):
+            return [s.strip() for s in v.split(",")]
+        return v
 
     @property
     def is_production(self) -> bool:

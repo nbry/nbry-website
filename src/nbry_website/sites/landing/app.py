@@ -22,20 +22,17 @@ app.mount("/static", StaticFiles(directory=str(SITE_DIR / "static")), name="stat
 @app.get("/", response_class=HTMLResponse)
 async def landing(request: Request):
     """Main landing page with links to sub-sites."""
-    # Use request scheme for dynamic URLs (http in dev, https in prod)
     scheme = request.url.scheme
     base_domain = site_settings.base_domain
 
-    # For localhost multi-port development, use port-specific URLs
-    # For subdomain routing (nbry.local or production), use subdomain URLs
     if base_domain == "localhost":
         lifting_url = f"{scheme}://localhost:8001"
         coffee_url = f"{scheme}://localhost:8002"
-        career_url = f"{scheme}://localhost:8003"
+        mycareer_url = f"{scheme}://localhost:8003"
     else:
         lifting_url = f"{scheme}://lifting.{base_domain}"
         coffee_url = f"{scheme}://coffee.{base_domain}"
-        career_url = f"{scheme}://career.{base_domain}"
+        mycareer_url = f"{scheme}://mycareer.{base_domain}"
 
     return templates.TemplateResponse(
         request=request,
@@ -45,7 +42,7 @@ async def landing(request: Request):
             "sites": [
                 {
                     "name": "Career",
-                    "url": career_url,
+                    "url": mycareer_url,
                     "description": "Professional portfolio",
                     "icon": "💼",
                     "coming_soon": True,

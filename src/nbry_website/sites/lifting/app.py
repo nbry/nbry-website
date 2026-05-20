@@ -1,5 +1,6 @@
 """Lifting site FastAPI application."""
 
+from contextlib import asynccontextmanager
 from pathlib import Path
 
 from fastapi import FastAPI
@@ -7,10 +8,20 @@ from fastapi.staticfiles import StaticFiles
 
 from nbry_website.sites.lifting import routes
 
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    """Lifespan context manager for startup/shutdown events."""
+    # Startup: Initialize lifting site resources
+    yield
+    # Shutdown: Cleanup lifting site resources
+
+
 # Create site-specific app
 app = FastAPI(
     title="NBRY Lifting",
     description="Strength training program and resources",
+    lifespan=lifespan,
 )
 
 # Site directory
@@ -25,16 +36,3 @@ app.mount(
 
 # Include routes
 app.include_router(routes.router)
-
-
-# Startup/shutdown events (if needed in future)
-@app.on_event("startup")
-async def startup_event():
-    """Initialize lifting site resources."""
-    pass
-
-
-@app.on_event("shutdown")
-async def shutdown_event():
-    """Cleanup lifting site resources."""
-    pass
