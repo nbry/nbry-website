@@ -32,9 +32,6 @@ equipment = "barbell"
 focus = "strength"
 increment = 2.5
 movement = "horizontal_pull"
-rep_range = [5, 8]
-target_reps = 5
-target_weight = 120
 tier = "secondary"
 
 [ohp]
@@ -44,9 +41,6 @@ equipment = "barbell"
 focus = "strength"
 increment = 2.5
 movement = "vertical_press"
-rep_range = [5, 8]
-target_reps = 5
-target_weight = 120
 tier = "secondary"
 
 [pullups]
@@ -56,9 +50,6 @@ equipment = "plate"
 focus = "strength"
 increment = 5
 movement = "vertical_pull"
-rep_range = [1, 15]
-target_reps = 8
-target_weight = 0
 tier = "secondary"
 
 [rdl]
@@ -86,9 +77,6 @@ equipment = "dumbbell"
 focus = "hypertrophy"
 increment = 5
 movement = "horizontal_pull"
-rep_range = [8, 10]
-target_reps = 8
-target_weight = 120
 tier = "secondary"
 
 [lateral_raise]
@@ -98,9 +86,6 @@ equipment = "dumbbell"
 focus = "hypertrophy"
 increment = 2.5
 movement = "side_delt_accessory"
-rep_range = [8, 12]
-target_reps = 10
-target_weight = 30
 tier = "tertiary"
 
 [wrist_extension]
@@ -110,9 +95,6 @@ equipment = "dumbbell"
 focus = "hypertrophy"
 increment = 2.5
 movement = "forearm_accessory"
-rep_range = [12, 20]
-target_reps = 12
-target_weight = 20
 tier = "tertiary"
 
 [wrist_curl]
@@ -122,9 +104,6 @@ equipment = "dumbbell"
 focus = "hypertrophy"
 increment = 2.5
 movement = "forearm_accessory"
-rep_range = [12, 20]
-target_reps = 12
-target_weight = 30
 tier = "tertiary"
 
 [calf_raise]
@@ -134,9 +113,6 @@ equipment = "barbell"
 focus = "hypertrophy"
 increment = 40
 movement = "calf_accessory"
-rep_range = [10, 15]
-target_reps = 12
-target_weight = 135
 tier = "tertiary"
 
 [ab_mat_situp]
@@ -146,9 +122,6 @@ equipment = "plate"
 focus = "hypertrophy"
 increment = 5
 movement = "core"
-rep_range = [8, 15]
-target_reps = 12
-target_weight = 5
 tier = "tertiary"
 
 [lying_db_curl]
@@ -158,9 +131,6 @@ equipment = "dumbbell"
 focus = "hypertrophy"
 increment = 2.5
 movement = "bicep_accessory"
-rep_range = [8, 12]
-target_reps = 12
-target_weight = 35
 tier = "tertiary"
 
 [preacher_curl]
@@ -170,9 +140,6 @@ equipment = "freeweight"
 focus = "hypertrophy"
 increment = 2.5
 movement = "bicep_accessory"
-rep_range = [8, 12]
-target_reps = 8
-target_weight = 55
 tier = "tertiary"
 
 [skullcrusher]
@@ -182,9 +149,6 @@ equipment = "barbell"
 focus = "hypertrophy"
 increment = 2.5
 movement = "tricep_accessory"
-rep_range = [8, 12]
-target_reps = 12
-target_weight = 30
 tier = "tertiary"
 
 [reverse_crunch]
@@ -194,7 +158,4 @@ equipment = "bodyweight"
 focus = "hypertrophy"
 increment = 0
 movement = "core"
-rep_range = [8, 15]
-target_reps = 9
-target_weight = 0
 tier = "tertiary"

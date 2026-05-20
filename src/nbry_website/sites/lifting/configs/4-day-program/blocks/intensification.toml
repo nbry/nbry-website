@@ -27,18 +27,18 @@ sets = [{ reps = 6, tune = 1 }, { reps = 6, tune = 1 }, { reps = 6, tune = 1 }]
 
 [[days.exercises]]
 exercise = "lateral_raise"
-reps = 10
 sets = 3
+rep_range = [8, 12]
 
 [[days.exercises]]
 exercise = "calf_raise"
-reps = 12
 sets = 3
+rep_range = [10, 15]
 
 [[days.exercises]]
 exercise = "lying_db_curl"
-reps = 12
 sets = 3
+rep_range = [8, 12]
 
 [[days]]
 name = "Day 2"
@@ -61,8 +61,8 @@ sets = [
 
 [[days.exercises]]
 exercise = "pullups"
-reps = 8
 sets = 3
+rep_range = [5, 8]
 
 [[days.exercises]]
 exercise = "db_bench_press"
@@ -70,15 +70,91 @@ sets = [{ reps = 8, tune = 0.5 }, { reps = 8, tune = 0.5 }]
 
 [[days.exercises]]
 exercise = "wrist_curl"
-reps = 12
 sets = 3
+rep_range = [12, 20]
+
+[[days.exercises]]
+exercise = "ab_mat_situp"
+sets = 3
+rep_range = [12, 20]
+
+[[days]]
+name = "Day 3"
+
+[[days.exercises]]
+exercise = "bench"
+sets = [
+    { reps = 3, tune = 0.85 },
+    { reps = 3, tune = 0.85 },
+    { reps = 3, tune = 0.85 },
+    { reps = 3, tune = 0.85 },
+]
+
+[[days.exercises]]
+exercise = "deadlift"
+sets = [
+    { reps = 3, tune = 0.85 },
+    { reps = 3, tune = 0.85 },
+    { reps = 3, tune = 0.85 },
+]
+
+[[days.exercises]]
+exercise = "pullups"
+sets = 3
+rep_range = [5, 8]
 
 [[days.exercises]]
 exercise = "skullcrusher"
-reps = 12
 sets = 3
+rep_range = [8, 12]
+
+[[days.exercises]]
+exercise = "wrist_extension"
+sets = 3
+rep_range = [12, 20]
 
 [[days.exercises]]
 exercise = "reverse_crunch"
-reps = 9
 sets = 3
+rep_range = [8, 15]
+
+[[days]]
+name = "Day 4"
+
+[[days.exercises]]
+exercise = "squat"
+sets = [
+    { reps = 3, tune = 0.85 },
+    { reps = 3, tune = 0.8 },
+    { reps = 3, tune = 0.8 },
+    { reps = 3, tune = 0.8 },
+]
+
+[[days.exercises]]
+exercise = "ohp"
+sets = [
+    { reps = 4, tune = 1.025 },
+    { reps = 4, tune = 0.925 },
+    { reps = 4, tune = 0.925 },
+    { reps = 4, tune = 0.925 },
+]
+
+[[days.exercises]]
+exercise = "db_row"
+sets = 3
+rep_range = [6, 10]
+
+[[days.exercises]]
+exercise = "lateral_raise"
+sets = 3
+rep_range = [8, 12]
+
+[[days.exercises]]
+exercise = "calf_raise"
+sets = 3
+rep_range = [10, 15]
+
+[[days.exercises]]
+exercise = "preacher_curl"
+sets = 3
+rep_range = [6, 10]

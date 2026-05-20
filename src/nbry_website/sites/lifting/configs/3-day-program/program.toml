@@ -1,0 +1,28 @@
+[program]
+id = "nbry-3-day"
+name = "nbry 3 day program"
+description = "5-week block periodized powerbuilding program using a 3-day full body split."
+duration_weeks = 5
+days_per_week = 3
+unit_system = "imperial"
+exercise_catalog = "exercises.toml"
+progression_rules = "progression.toml"
+calculation_rules = "calculation.toml"
+rounding_rules = "rounding.toml"
+rest_rules = "rest.toml"
+milestones = "milestones.toml"
+
+[[program.blocks]]
+name = "accumulation"
+file = "blocks/accumulation.toml"
+weeks = [1, 2]
+
+[[program.blocks]]
+name = "intensification"
+file = "blocks/intensification.toml"
+weeks = [3, 4]
+
+[[program.blocks]]
+name = "deload"
+file = "blocks/deload.toml"
+weeks = [5]
