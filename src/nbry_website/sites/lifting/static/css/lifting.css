@@ -2,16 +2,15 @@
    Lifting Site Specific Styles
    ======================================== */
 
-/* Main content narrower for better readability */
-main {
-  max-width: 900px;
-}
-
 /* Offset anchor scroll for sticky header */
 h2 {
   scroll-margin-top: 80px;
   color: var(--color-syntax-function) !important;
   font-weight: 700;
+}
+
+h3 {
+  scroll-margin-top: 80px;
 }
 
 h2:first-of-type {
@@ -52,22 +51,22 @@ h4 {
 .page-with-sidebar {
   display: flex;
   gap: var(--space-lg);
-  max-width: 1400px;
+  max-width: 1600px;
   margin: 0 auto;
   width: 100%;
 }
 
 .sidebar {
   display: none;
-  flex: 0 0 150px;
+  flex: 0 0 300px;
 }
 
 .toc {
   position: fixed;
   top: 180px;
   left: 50%;
-  transform: translateX(calc(-50% + 327px));
-  width: 150px;
+  transform: translateX(calc(-50% + 420px));
+  width: 300px;
   border-left: 2px solid var(--color-syntax-lavender);
   padding-left: var(--space-md);
 }
@@ -206,6 +205,10 @@ h4 {
   border-left-color: var(--color-syntax-string);
 }
 
+.nav-dropdown-menu a:nth-child(4) {
+  border-left-color: var(--color-syntax-lavender);
+}
+
 .nav-dropdown-menu a:last-child {
   border-bottom: none;
 }
@@ -272,6 +275,31 @@ h4 {
   .dropdown-toggle:checked ~ .nav-dropdown-toggle .dropdown-arrow {
     transform: rotate(180deg);
   }
+
+  /* Show hamburger at this breakpoint instead of 768px */
+  .nav-label {
+    display: block;
+  }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    padding: var(--space-md);
+    gap: 0;
+  }
+
+  .nav-toggle:checked ~ nav {
+    display: flex;
+  }
+
+  nav a {
+    width: 100%;
+    text-align: left;
+    padding: var(--space-md);
+    border-bottom: 1px solid var(--color-border);
+    border-radius: 0;
+  }
 }
 
 /* Tablet/Desktop: Larger content font, keep nav compact */
@@ -293,6 +321,10 @@ h4 {
     scroll-margin-top: 160px;
   }
 
+  h3 {
+    scroll-margin-top: 160px;
+  }
+
   main {
     padding: var(--space-2xl) var(--space-xl);
   }
@@ -307,6 +339,13 @@ h4 {
   .sidebar {
     display: block;
     order: 2;
+  }
+
+  /* sidebar nested item (targets h3s) should be indented and more neutral color */
+  .nested-list a {
+    padding-left: var(--space-lg);
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
   }
 }
 
@@ -362,11 +401,7 @@ blockquote strong {
 
 /* Table header with gradient */
 th {
-  background: linear-gradient(
-    135deg,
-    var(--color-bg-secondary) 0%,
-    var(--color-bg-tertiary) 100%
-  );
+  background: linear-gradient(135deg, var(--color-bg-secondary) 0%, var(--color-bg-tertiary) 100%);
   color: var(--color-syntax-function);
   border-bottom: 2px solid var(--color-syntax-function);
 }
@@ -379,4 +414,3 @@ tbody tr:nth-child(odd) {
 tbody tr:nth-child(even) {
   border-left: 2px solid var(--color-syntax-string);
 }
-

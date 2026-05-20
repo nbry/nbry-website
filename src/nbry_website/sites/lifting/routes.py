@@ -36,11 +36,11 @@ async def equipment(request: Request):
     )
 
 
-@router.get("/instructions", response_class=HTMLResponse)
-async def instructions(request: Request):
-    """Instructions page of the website."""
+@router.get("/guide", response_class=HTMLResponse)
+async def guide(request: Request):
+    """Guide page of the website."""
     return templates.TemplateResponse(
-        request=request, name="instructions.html", context={"request": request}
+        request=request, name="guide.html", context={"request": request}
     )
 
 
@@ -60,11 +60,11 @@ async def changelog(request: Request):
     )
 
 
-@router.get("/links", response_class=HTMLResponse)
-async def links(request: Request):
+@router.get("/start", response_class=HTMLResponse)
+async def getting_started(request: Request):
     """Links to external resources."""
     return templates.TemplateResponse(
-        request=request, name="links.html", context={"request": request}
+        request=request, name="getting-started.html", context={"request": request}
     )
 
 

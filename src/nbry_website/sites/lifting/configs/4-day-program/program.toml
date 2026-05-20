@@ -1,6 +1,6 @@
 [program]
-id = "pillar_v1"
-name = "Pillar"
+id = "nbry-4-day"
+name = "nbry 4 day program"
 description = "5-week block periodized powerbuilding program using a 4-day full body split."
 duration_weeks = 5
 days_per_week = 4
@@ -15,22 +15,14 @@ milestones = "milestones.toml"
 [[program.blocks]]
 name = "accumulation"
 file = "blocks/accumulation.toml"
-weeks = [
-    1,
-    2,
-]
+weeks = [1, 2]
 
 [[program.blocks]]
 name = "intensification"
 file = "blocks/intensification.toml"
-weeks = [
-    3,
-    4,
-]
+weeks = [3, 4]
 
 [[program.blocks]]
 name = "deload"
 file = "blocks/deload.toml"
-weeks = [
-    5,
-]
+weeks = [5]

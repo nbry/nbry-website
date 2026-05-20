@@ -133,6 +133,10 @@ a:focus {
   outline-offset: 2px;
 }
 
+.download-link {
+  text-decoration: underline;
+}
+
 strong {
   color: var(--color-accent);
   font-weight: 600;
