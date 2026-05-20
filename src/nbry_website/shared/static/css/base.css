@@ -28,6 +28,7 @@
   --color-syntax-number: #fbbf24;
   --color-syntax-comment: #6a9955;
   --color-syntax-class: #ef4444;
+  --color-syntax-lavender: #c084fc;
 
   /* Typography */
   --font-family-base: "Roboto Mono", "Courier New", monospace;
