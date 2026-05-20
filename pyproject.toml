@@ -4,12 +4,13 @@ dependencies = [
   "jinja2>=3.1.6",
   "psycopg2-binary>=2.9.12",
   "pydantic>=2.10.5",
+  "pydantic-settings>=2.7.1",
   "python-dotenv>=1.2.2",
   "sqlalchemy>=2.0.49",
   "tomli-w>=1.1.0",
 ]
-description = "A web application for the NBRY lifting program."
-name = "nbry_lifting_website"
+description = "Multi-site platform for NBRY content (lifting, coffee, career)."
+name = "nbry_website"
 readme = "README.md"
 requires-python = ">=3.14"
 version = "0.1.0"
@@ -24,14 +25,16 @@ dev = [
 ]
 
 [project.scripts]
-my-script = "nbry_lifting_website.app:app"
+nbry-web = "nbry_website.main:app"
+nbry-lifting = "nbry_website.sites.lifting.app:app"
+nbry-landing = "nbry_website.sites.landing.app:app"
 
 [build-system]
 build-backend = "hatchling.build"
 requires = ["hatchling"]
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/nbry_lifting_website"]
+packages = ["src/nbry_website"]
 
 [tool.ruff]
 line-length = 88

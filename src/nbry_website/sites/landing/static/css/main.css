@@ -1,6 +1,6 @@
 /* Landing Page Styles */
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600;700&display=swap");
 
 :root {
   /* Colors - Dark theme */
@@ -13,7 +13,7 @@
   --color-accent-hover: #6dd0d0;
 
   /* Typography */
-  --font-family-base: 'Roboto Mono', 'Courier New', monospace;
+  --font-family-base: "Roboto Mono", "Courier New", monospace;
 
   /* Spacing */
   --space-sm: 0.75rem;
@@ -78,7 +78,9 @@ body {
   border-radius: 8px;
   padding: var(--space-xl);
   text-align: center;
-  transition: transform 0.2s ease, border-color 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .site-card:hover:not(.coming-soon) {

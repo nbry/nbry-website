@@ -4,7 +4,7 @@ setup:
 	uv sync
 
 run:
-	uv run uvicorn nbry_lifting_website.app:app --reload
+	uv run uvicorn nbry_website.main:app --reload
 
 lint:
 	uv run ruff check .

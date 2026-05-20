@@ -15,7 +15,7 @@ services:
         target: /ssh-agent
     environment:
       - SSH_AUTH_SOCK=/ssh-agent
-      - DATABASE_URL=postgresql://postgres:postgres@postgres:5432/lifting_website
+      - DATABASE_URL=postgresql://postgres:postgres@postgres:5432/nbry_website
       - REDIS_URL=redis://redis:6379/0
       - PYTHON_VERSION=3.14
     command: sleep infinity
@@ -33,7 +33,7 @@ services:
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: lifting_website
+      POSTGRES_DB: nbry_website
     ports:
       - "5432:5432"
     networks:

@@ -62,11 +62,51 @@
       }
     },
     {
-      "name": "FastAPI: Run App",
+      "name": "FastAPI: Run Master App",
       "type": "debugpy",
       "request": "launch",
       "module": "uvicorn",
-      "args": ["nbry_lifting_website.app:app", "--reload", "--host", "0.0.0.0", "--port", "8000"],
+      "args": ["nbry_website.main:app", "--reload", "--host", "0.0.0.0", "--port", "8000"],
+      "jinja": true,
+      "console": "integratedTerminal",
+      "justMyCode": false,
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/src"
+      }
+    },
+    {
+      "name": "FastAPI: Run Lifting Site",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "uvicorn",
+      "args": [
+        "nbry_website.sites.lifting.app:app",
+        "--reload",
+        "--host",
+        "0.0.0.0",
+        "--port",
+        "8001"
+      ],
+      "jinja": true,
+      "console": "integratedTerminal",
+      "justMyCode": false,
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/src"
+      }
+    },
+    {
+      "name": "FastAPI: Run Landing Site",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "uvicorn",
+      "args": [
+        "nbry_website.sites.landing.app:app",
+        "--reload",
+        "--host",
+        "0.0.0.0",
+        "--port",
+        "8000"
+      ],
       "jinja": true,
       "console": "integratedTerminal",
       "justMyCode": false,

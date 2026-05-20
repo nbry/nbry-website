@@ -1,8 +1,10 @@
 """Route handlers for the lifting site."""
+
+from pathlib import Path
+
 from fastapi import APIRouter, Request
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
-from pathlib import Path
 
 SITE_DIR = Path(__file__).parent
 templates = Jinja2Templates(directory=str(SITE_DIR / "templates"))
