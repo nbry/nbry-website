@@ -5,6 +5,8 @@ from typing import Any
 from fastapi import FastAPI, Request
 from fastapi.responses import RedirectResponse
 from starlette.middleware.base import BaseHTTPMiddleware
+from starlette.responses import Response
+from starlette.types import Message
 
 from nbry_website.config import SiteSettings
 from nbry_website.sites.landing import app as landing_app
@@ -48,27 +50,14 @@ class SubdomainRoutingMiddleware(BaseHTTPMiddleware):
         host = request.headers.get("host", "")
 
         # Extract subdomain
-        # Examples:
-        #   "localhost:8000" -> "" (root)
-        #   "lifting.localhost:8000" -> "lifting"
-        #   "lifting.nbry.net" -> "lifting"
-        #   "nbry.local:8000" -> "" (root)
-        #   "lifting.nbry.local:8000" -> "lifting"
-
-        # Remove port if present
         host_without_port = host.split(":")[0]
         parts = host_without_port.split(".")
 
         # Determine subdomain
-        if len(parts) == 1:
-            # Just "localhost" or single domain -> root
-            subdomain = ""
-        elif len(parts) == 2:
-            # "nbry.net" or "nbry.local" -> root
-            subdomain = ""
+        if len(parts) <= 2:
+            subdomain = ""  # root domain
         else:
-            # "lifting.nbry.net" or "lifting.nbry.local" -> "lifting"
-            subdomain = parts[0]
+            subdomain = parts[0]  # first part is subdomain
 
         # Get the target app
         target_app = SITE_APPS.get(subdomain)
@@ -78,11 +67,12 @@ class SubdomainRoutingMiddleware(BaseHTTPMiddleware):
             base_url = f"{request.url.scheme}://{site_settings.base_domain}"
             return RedirectResponse(url=base_url, status_code=302)
 
-        # Store site info in request state
-        request.state.site = subdomain or "landing"
-        request.state.root_app = app
+        # If target_app is the same as the master app, continue normally
+        if target_app == app:
+            return await call_next(request)
 
-        # Inject site URLs into request state for templates
+        # Store site info in request state for templates
+        request.state.site = subdomain or "landing"
         request.state.site_urls = {
             "landing": f"{request.url.scheme}://{site_settings.base_domain}",
             "lifting": f"{request.url.scheme}://lifting.{site_settings.base_domain}",
@@ -90,10 +80,25 @@ class SubdomainRoutingMiddleware(BaseHTTPMiddleware):
             "mycareer": f"{request.url.scheme}://mycareer.{site_settings.base_domain}",
         }
 
-        # Call the target app
-        # Note: We need to handle the app call directly for subdomain routing
-        response = await call_next(request)
-        return response
+        # Call the target sub-app directly using ASGI protocol
+        status_code = 200
+        response_headers: list[tuple[bytes, bytes]] = []
+        body_parts: list[bytes] = []
+
+        async def send(message: Message) -> None:
+            nonlocal status_code, response_headers, body_parts
+            if message["type"] == "http.response.start":
+                status_code = message["status"]
+                response_headers = message.get("headers", [])
+            elif message["type"] == "http.response.body":
+                body_parts.append(message.get("body", b""))
+
+        await target_app(request.scope, request.receive, send)
+
+        # Build the response
+        body = b"".join(body_parts)
+        headers_dict = {k.decode(): v.decode() for k, v in response_headers}
+        return Response(content=body, status_code=status_code, headers=headers_dict)
 
 
 # Add middleware
