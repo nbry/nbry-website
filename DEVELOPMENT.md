@@ -6,10 +6,10 @@ A collection of independent websites under the NBRY domain, built with FastAPI a
 
 This project hosts multiple independent websites under a single deployment:
 
-- **nbry.com** - Main landing page with links to all sub-sites
-- **lifting.nbry.com** - Strength training program and resources
-- **coffee.nbry.com** - Coffee content (coming soon)
-- **mycareer.nbry.com** - Career portfolio (coming soon)
+- **nbry.net** - Main landing page with links to all sub-sites
+- **lifting.nbry.net** - Strength training program and resources
+- **coffee.nbry.net** - Coffee content (coming soon)
+- **mycareer.nbry.net** - Career portfolio (coming soon)
 
 Each site is a self-contained FastAPI application with its own templates, static files, and routes. The master app uses subdomain-based routing to delegate requests to the appropriate site.
 
@@ -20,11 +20,11 @@ src/nbry_website/
 ├── main.py                    # Master app with subdomain routing middleware
 ├── config.py                  # Shared configuration (Pydantic settings)
 ├── sites/                     # Independent site applications
-│   ├── landing/              # nbry.com
+│   ├── landing/              # nbry.net
 │   │   ├── app.py
 │   │   ├── templates/
 │   │   └── static/
-│   └── lifting/              # lifting.nbry.com
+│   └── lifting/              # lifting.nbry.net
 │       ├── app.py
 │       ├── routes.py
 │       ├── templates/
@@ -118,7 +118,7 @@ Environment variables are configured in `.env` (copy from `.env.example`):
 - `SITE_MODE` - `development` or `production`
 - `DATABASE_URL` - PostgreSQL connection string
 - `REDIS_URL` - Redis connection string
-- `ROOT_DOMAIN` - Production domain (e.g., `nbry.com`)
+- `ROOT_DOMAIN` - Production domain (e.g., `nbry.net`)
 - `LOCAL_DOMAIN` - Local development domain (e.g., `nbry.local`)
 - `ALLOWED_SUBDOMAINS` - Comma-separated list of valid subdomains
 - `LIFTING_SITE_ENABLED` - Enable/disable lifting site
@@ -129,7 +129,7 @@ Environment variables are configured in `.env` (copy from `.env.example`):
 
 The `SubdomainRoutingMiddleware` in `main.py` extracts the subdomain from the `Host` header and routes requests to the appropriate site app:
 
-1. Request arrives: `lifting.nbry.com/philosophy`
+1. Request arrives: `lifting.nbry.net/philosophy`
 2. Middleware extracts subdomain: `"lifting"`
 3. Looks up site app in `SITE_APPS` mapping
 4. Delegates request to `lifting_app`

@@ -26,7 +26,7 @@ class SiteSettings(BaseSettings):
     redis_url: str = "redis://redis:6379/0"
 
     # Domains
-    root_domain: str = "nbry.com"
+    root_domain: str = "nbry.net"
     local_domain: str = "nbry.local"
     allowed_subdomains: list[str] = ["mycareer", "lifting", "coffee"]
 

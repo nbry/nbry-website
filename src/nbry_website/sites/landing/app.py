@@ -1,4 +1,4 @@
-"""Landing page for nbry.com."""
+"""Landing page for nbry.net."""
 
 from pathlib import Path
 

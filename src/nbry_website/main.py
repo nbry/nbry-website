@@ -20,7 +20,7 @@ site_settings = SiteSettings()
 def get_site_apps() -> dict[str, FastAPI]:
     """Get mapping of subdomains to site apps."""
     apps = {
-        "": landing_app.app,  # nbry.com (root)
+        "": landing_app.app,  # nbry.net (root)
     }
 
     # Add enabled sites
@@ -51,7 +51,7 @@ class SubdomainRoutingMiddleware(BaseHTTPMiddleware):
         # Examples:
         #   "localhost:8000" -> "" (root)
         #   "lifting.localhost:8000" -> "lifting"
-        #   "lifting.nbry.com" -> "lifting"
+        #   "lifting.nbry.net" -> "lifting"
         #   "nbry.local:8000" -> "" (root)
         #   "lifting.nbry.local:8000" -> "lifting"
 
@@ -64,10 +64,10 @@ class SubdomainRoutingMiddleware(BaseHTTPMiddleware):
             # Just "localhost" or single domain -> root
             subdomain = ""
         elif len(parts) == 2:
-            # "nbry.com" or "nbry.local" -> root
+            # "nbry.net" or "nbry.local" -> root
             subdomain = ""
         else:
-            # "lifting.nbry.com" or "lifting.nbry.local" -> "lifting"
+            # "lifting.nbry.net" or "lifting.nbry.local" -> "lifting"
             subdomain = parts[0]
 
         # Get the target app
