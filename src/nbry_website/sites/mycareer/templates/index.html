@@ -50,13 +50,27 @@
         </p>
         <div class="contact-info">
           <span><a href="mailto:nmwbryant@gmail.com">nmwbryant@gmail.com</a></span>
-          <span>Foster City, CA</span>
+          <span
+            ><a
+              href="https://www.linkedin.com/in/nmwbryant"
+              target="_blank"
+              rel="noopener noreferrer"
+              >linkedin.com/in/nmwbryant</a
+            ></span
+          >
           <span
             ><a href="https://github.com/nbry" target="_blank" rel="noopener noreferrer"
               >github.com/nbry</a
             ></span
           >
         </div>
+        <a
+          href="{{ url_for('static', path='files/nathaniel-bryant-resume.pdf') }}"
+          class="btn download-resume-mobile"
+          download
+        >
+          Download Resume
+        </a>
       </section>
 
       <!-- Skills Section -->
@@ -142,11 +156,6 @@
                 optimization including parallelization strategies to reduce build times and increase
                 deployment efficiency.
               </li>
-              <li>
-                <strong>Outage Management</strong> - Managed and mitigated production outages,
-                including incident response, root cause analysis, and post-mortem documentation to
-                prevent future occurrences.
-              </li>
             </ul>
           </div>
 
@@ -170,6 +179,11 @@
               <li>
                 <strong>Adaptive Strategy</strong> - Engineered a resilient authentication system to
                 automate complex OEM web login flows using pub/sub messaging techniques.
+              </li>
+              <li>
+                <strong>Outage Management</strong> - Managed and mitigated production outages,
+                including incident response, root cause analysis, and post-mortem documentation to
+                prevent future occurrences.
               </li>
             </ul>
           </div>

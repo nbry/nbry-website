@@ -110,11 +110,7 @@ h2 {
   top: 0;
   bottom: 0;
   width: 2px;
-  background: linear-gradient(
-    180deg,
-    var(--color-syntax-function),
-    var(--color-syntax-tag)
-  );
+  background: linear-gradient(180deg, var(--color-syntax-function), var(--color-syntax-tag));
 }
 
 .experience-item {
@@ -279,6 +275,20 @@ h2 {
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.6);
 }
 
+/* Mobile Download Button (in hero section) */
+.download-resume-mobile {
+  display: none;
+  margin-top: var(--space-lg);
+  background: linear-gradient(135deg, var(--color-syntax-function), var(--color-syntax-tag));
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.download-resume-mobile:hover {
+  background: linear-gradient(135deg, var(--color-syntax-string), var(--color-syntax-function));
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .hero h1 {
@@ -306,8 +316,25 @@ h2 {
     grid-template-columns: 1fr;
   }
 
+  /* Hide floating download button on mobile */
   .download-resume {
-    bottom: var(--space-md);
-    right: var(--space-md);
+    display: none;
+  }
+
+  /* Show mobile download button in hero */
+  .download-resume-mobile {
+    display: inline-block;
+  }
+
+  /* Hide achievement tags on mobile */
+  @media (max-width: 480px) {
+    .experience-achievements strong {
+      display: none;
+    }
+
+    /* Remove extra dash after hidden tag */
+    .experience-achievements li::after {
+      content: none;
+    }
   }
 }
