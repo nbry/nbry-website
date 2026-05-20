@@ -45,7 +45,7 @@ async def landing(request: Request):
                     "url": mycareer_url,
                     "description": "Professional portfolio",
                     "icon": "💼",
-                    "coming_soon": True,
+                    "coming_soon": False,
                 },
                 {
                     "name": "Lifting",

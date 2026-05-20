@@ -9,6 +9,7 @@ from starlette.middleware.base import BaseHTTPMiddleware
 from nbry_website.config import SiteSettings
 from nbry_website.sites.landing import app as landing_app
 from nbry_website.sites.lifting import app as lifting_app
+from nbry_website.sites.mycareer import app as mycareer_app
 
 # Master app (root)
 app = FastAPI(title="NBRY Multi-Site Platform")
@@ -26,11 +27,12 @@ def get_site_apps() -> dict[str, FastAPI]:
     if site_settings.lifting_site_enabled:
         apps["lifting"] = lifting_app.app
 
+    if site_settings.mycareer_site_enabled:
+        apps["mycareer"] = mycareer_app.app
+
     # Future sites will be added here when enabled
     # if site_settings.coffee_site_enabled:
     #     apps["coffee"] = coffee_app.app
-    # if site_settings.mycareer_site_enabled:
-    #     apps["mycareer"] = mycareer_app.app
 
     return apps
 

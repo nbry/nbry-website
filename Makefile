@@ -1,4 +1,4 @@
-.PHONY: help setup install run run-master run-landing run-lifting run-dev lint test test-cov type-check format clean clean-cache db-up db-down db-logs docker-up docker-down docker-logs
+.PHONY: help setup install run run-master run-landing run-lifting run-mycareer run-dev lint test test-cov type-check format clean clean-cache db-up db-down db-logs docker-up docker-down docker-logs
 
 # Default target
 help:
@@ -13,6 +13,7 @@ help:
 	@echo "  make run-master     - Alias for run"
 	@echo "  make run-landing    - Run landing site only (port 8000)"
 	@echo "  make run-lifting    - Run lifting site only (port 8001)"
+	@echo "  make run-mycareer   - Run career site only (port 8003)"
 	@echo "  make run-dev        - Run landing (8000) and lifting (8001) in parallel"
 	@echo ""
 	@echo "Development:"
@@ -41,6 +42,9 @@ run-landing:
 
 run-lifting:
 	uv run uvicorn nbry_website.sites.lifting.app:app --reload --port 8001
+
+run-mycareer:
+	uv run uvicorn nbry_website.sites.mycareer.app:app --reload --port 8003
 
 run-dev:
 	@echo "Starting landing (8000) and lifting (8001) sites..."

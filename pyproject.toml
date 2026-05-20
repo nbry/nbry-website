@@ -28,6 +28,7 @@ dev = [
 nbry-web = "nbry_website.main:app"
 nbry-lifting = "nbry_website.sites.lifting.app:app"
 nbry-landing = "nbry_website.sites.landing.app:app"
+nbry-mycareer = "nbry_website.sites.mycareer.app:app"
 
 [build-system]
 build-backend = "hatchling.build"

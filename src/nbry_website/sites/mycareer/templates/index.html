@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nathaniel Bryant - Software Engineer</title>
+    <link rel="stylesheet" href="{{ url_for('shared', path='css/base.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', path='css/career.css') }}" />
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <h1>nbry</h1>
+        <label for="nav-toggle" class="nav-label" aria-label="Toggle navigation menu">
+          <svg
+            width="32"
+            height="32"
+            viewBox="0 0 32 32"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M5 8h22M5 16h22M5 24h22"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+            />
+          </svg>
+        </label>
+      </div>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+      <nav aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <!-- Hero/About Section -->
+      <section id="about" class="hero">
+        <h1>Hey! I'm Nathan 👋</h1>
+        <p class="tagline">
+          I'm a software Engineer with 5 years of experience building backend platforms, REST APIs,
+          and developer tooling. At Smartcar, I led major system migrations and infrastructure
+          changes under tight deadlines. I built event-driven systems, SDKs, and large-scale
+          integrations used by developers worldwide.
+        </p>
+        <div class="contact-info">
+          <span><a href="mailto:nmwbryant@gmail.com">nmwbryant@gmail.com</a></span>
+          <span>Foster City, CA</span>
+          <span
+            ><a href="https://github.com/nbry" target="_blank" rel="noopener noreferrer"
+              >github.com/nbry</a
+            ></span
+          >
+        </div>
+      </section>
+
+      <!-- Skills Section -->
+      <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-category">
+            <h3>Languages & Tools</h3>
+            <ul>
+              <li>JavaScript/TypeScript, Node.js</li>
+              <li>Python, Rust, Bash</li>
+              <li>Linux, Git, Docker</li>
+              <li>Observe, OpenTelemetry</li>
+            </ul>
+          </div>
+
+          <div class="skill-category">
+            <h3>Backend & APIs</h3>
+            <ul>
+              <li>REST APIs, GraphQL, gRPC</li>
+              <li>WebSockets, MQTT, Protobuf</li>
+              <li>Webhooks & Event-Driven Systems</li>
+              <li>SDK Development (Python, Rust)</li>
+              <li>Authentication & Rate Limiting</li>
+            </ul>
+          </div>
+
+          <div class="skill-category">
+            <h3>Data & Infrastructure</h3>
+            <ul>
+              <li>PostgreSQL, Redis, BullMQ</li>
+              <li>Schema Design & Migrations</li>
+              <li>Distributed Caching</li>
+              <li>AWS (S3, Lambda, DynamoDB, SQS, SNS)</li>
+              <li>Redshift, CloudWatch, CDK</li>
+            </ul>
+          </div>
+
+          <div class="skill-category">
+            <h3>DevOps & Practices</h3>
+            <ul>
+              <li>CI/CD Pipelines (GitHub Actions, Buddy)</li>
+              <li>Outage Management & Root Cause Analysis</li>
+              <li>Metaprogramming & Code Generation</li>
+              <li>Containerization (Docker, devcontainers)</li>
+              <li>Branching Strategies & Code Reviews</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience Section -->
+      <section id="experience">
+        <h2>Experience</h2>
+        <div class="experience-timeline">
+          <!-- Smartcar - Software Engineer II -->
+          <div class="experience-item">
+            <div class="experience-header">
+              <div class="experience-title">
+                <h3>Software Engineer II, Core API</h3>
+                <span class="company">@ Smartcar</span>
+              </div>
+              <div class="experience-date">Jan 2023 - Mar 2026</div>
+            </div>
+            <ul class="experience-achievements">
+              <li>
+                <strong>Webhook Infrastructure</strong> - Co-architected Smartcar's event-driven
+                webhook system enabling rule-based delivery of vehicle data to developers at scale,
+                achieving 2000+ events/sec in alpha. Designed and implemented webhook systems for
+                real-time data delivery using messaging systems like SQS, SNS, and BullMQ.
+              </li>
+              <li>
+                <strong>System Overhaul</strong> - Led simultaneous database and tooling migrations
+                under tight deadlines, cutting costs by $300k/yr. Planned and executed database
+                migrations with added complexities including existing caching layers, multiple
+                dependent services, untyped languages, and tech debt. Used metaprogramming
+                techniques to minimize required code changes across services.
+              </li>
+              <li>
+                <strong>CI/CD Modernization</strong> - Led migration to a modern CI/CD platform with
+                parallelized pipelines, cutting build times from ~20 to 10 minutes and enabling
+                multiple concurrent builds that eliminated deployment queues. Designed pipeline
+                optimization including parallelization strategies to reduce build times and increase
+                deployment efficiency.
+              </li>
+              <li>
+                <strong>Outage Management</strong> - Managed and mitigated production outages,
+                including incident response, root cause analysis, and post-mortem documentation to
+                prevent future occurrences.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Smartcar - Software Engineer I -->
+          <div class="experience-item">
+            <div class="experience-header">
+              <div class="experience-title">
+                <h3>Software Engineer I, Platform</h3>
+                <span class="company">@ Smartcar</span>
+              </div>
+              <div class="experience-date">Jan 2022 - Dec 2022</div>
+            </div>
+            <ul class="experience-achievements">
+              <li>
+                <strong>Integration Expansion</strong> - Led 20 OEM vehicle integrations—including
+                all European manufacturers—enabling Smartcar's expansion into the EU market.
+                Integrated with diverse third-party interfaces including REST, GraphQL, gRPC,
+                WebSockets, MQTT, and Protobuf to expand application functionality and support new
+                features.
+              </li>
+              <li>
+                <strong>Adaptive Strategy</strong> - Engineered a resilient authentication system to
+                automate complex OEM web login flows using pub/sub messaging techniques.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Smartcar - Associate Engineer -->
+          <div class="experience-item">
+            <div class="experience-header">
+              <div class="experience-title">
+                <h3>Associate Engineer, Platform</h3>
+                <span class="company">@ Smartcar</span>
+              </div>
+              <div class="experience-date">May 2021 - Dec 2021</div>
+            </div>
+            <ul class="experience-achievements">
+              <li>
+                <strong>SDK Development</strong> - Rebuilt the official Smartcar Python SDK used
+                extensively in production by customers, improving stability and developer
+                experience. Authored the Smartcar Rust SDK. Focused on usability, stability, and
+                comprehensive documentation for developers across multiple programming languages.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Pacific Dental Services -->
+          <div class="experience-item">
+            <div class="experience-header">
+              <div class="experience-title">
+                <h3>Benefits Coordinator</h3>
+                <span class="company">@ Pacific Dental Services</span>
+              </div>
+              <div class="experience-date">Aug 2018 - May 2020</div>
+            </div>
+            <ul class="experience-achievements">
+              <li>
+                <strong>Workflow Optimization</strong> - Created reusable templates and pricing
+                calculators that streamlined benefits calculations and reduced appointment
+                durations.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Ardent Health Services - Revenue Integrity -->
+          <div class="experience-item">
+            <div class="experience-header">
+              <div class="experience-title">
+                <h3>Revenue Integrity Specialist</h3>
+                <span class="company">@ Ardent Health Services</span>
+              </div>
+              <div class="experience-date">Sep 2016 - Jun 2018</div>
+            </div>
+            <ul class="experience-achievements">
+              <li>
+                Worked with hospital billing data to identify and correct revenue leakage, improving
+                billing accuracy.
+              </li>
+              <li>
+                Reconciled data between 13 hospitals within a hospital system to ensure accurate
+                reporting and compliance.
+              </li>
+              <li>
+                Developed spreadsheets and scripts to automate data reconciliation processes,
+                reducing manual effort by 50% and improving efficiency.
+              </li>
+              <li>
+                Collaborated with cross-functional teams to implement process improvements that
+                enhanced revenue integrity and compliance across the hospital system.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Ardent Health Services - Underpayments -->
+          <div class="experience-item">
+            <div class="experience-header">
+              <div class="experience-title">
+                <h3>Underpayments Recovery Specialist</h3>
+                <span class="company">@ Ardent Health Services</span>
+              </div>
+              <div class="experience-date">Jun 2016 - Sep 2016</div>
+            </div>
+            <ul class="experience-achievements">
+              <li>
+                Analyzed hospital billing data to identify underpayments and revenue recovery
+                opportunities.
+              </li>
+              <li>
+                Collaborated with billing and finance teams to implement strategies that improved
+                revenue recovery rates and reduced financial losses.
+              </li>
+              <li>
+                Developed reports and dashboards to track underpayment trends and recovery
+                performance, providing insights for continuous improvement.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Education Section -->
+      <section id="education">
+        <h2>Education & Certifications</h2>
+        <div class="education-grid">
+          <div class="education-item">
+            <h3>Software Engineering Certification</h3>
+            <p class="institution">@ Springboard</p>
+            <p class="year">2021</p>
+          </div>
+
+          <div class="education-item">
+            <h3>Bachelor of Science, Biochemistry</h3>
+            <p class="institution">@ University of Michigan</p>
+            <p class="year">2014</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="contact-section">
+        <h2>Get In Touch</h2>
+        <div class="contact-methods">
+          <div class="contact-method">
+            <span class="label">Email</span>
+            <a href="mailto:nmwbryant@gmail.com">nmwbryant@gmail.com</a>
+          </div>
+          <div class="contact-method">
+            <span class="label">LinkedIn</span>
+            <a
+              href="https://www.linkedin.com/in/nmwbryant"
+              target="_blank"
+              rel="noopener noreferrer"
+              >linkedin.com/in/nmwbryant</a
+            >
+          </div>
+          <div class="contact-method">
+            <span class="label">GitHub</span>
+            <a href="https://github.com/nbry" target="_blank" rel="noopener noreferrer"
+              >github.com/nbry</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 Nathaniel Bryant. All rights reserved.</p>
+    </footer>
+
+    <!-- Floating Download Button -->
+    <a
+      href="{{ url_for('static', path='files/nathaniel-bryant-resume.pdf') }}"
+      class="btn download-resume"
+      download
+    >
+      Download Resume
+    </a>
+  </body>
+</html>
