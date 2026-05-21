@@ -358,7 +358,7 @@ code {
 }
 
 /* Rule callouts use em tags and match inline code color */
-em.rule-text {
+em.statement-text {
   color: var(--color-syntax-string);
 }
 
