@@ -8,7 +8,10 @@ from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 
 from nbry_website.sites.lifting.lib.config_loader import ConfigLoader
-from nbry_website.sites.lifting.lib.program_utils import format_sets_display, get_display_name
+from nbry_website.sites.lifting.lib.program_utils import (
+    format_sets_display,
+    get_display_name,
+)
 
 SITE_DIR = Path(__file__).parent
 CONFIGS_DIR = SITE_DIR / "configs"
