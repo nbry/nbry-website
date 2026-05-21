@@ -20,7 +20,7 @@
     </aside>
 
     <div class="main-with-toc">
-      <h2>4-Day Program</h2>
+      <h1 class="page-title">4-Day Program</h1>
       <p>{{ program.description }}</p>
 
       {% for block in program.blocks %}
@@ -29,8 +29,11 @@
             {{ block.data.name }}
             <span class="block-weeks">
               —
-              {% if block.weeks | length > 1 %}Weeks {{ block.weeks[0] }}–{{ block.weeks[-1] }}{% else %}Week
-              {{ block.weeks[0] }}{% endif %}
+              {% if block.weeks | length > 1 %}
+                Weeks {{ block.weeks[0] }}–{{ block.weeks[-1] }}
+              {% else %}
+                Week {{ block.weeks[0] }}
+              {% endif %}
             </span>
           </h2>
 

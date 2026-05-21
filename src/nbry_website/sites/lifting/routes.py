@@ -59,11 +59,11 @@ async def equipment(request: Request):
     )
 
 
-@router.get("/how-it-works", response_class=HTMLResponse)
-async def how_it_works(request: Request):
+@router.get("/program-guide", response_class=HTMLResponse)
+async def program_guide(request: Request):
     """Instructions for running the program."""
     return templates.TemplateResponse(
-        request=request, name="how-it-works.html", context={"request": request}
+        request=request, name="program-guide.html", context={"request": request}
     )
 
 
