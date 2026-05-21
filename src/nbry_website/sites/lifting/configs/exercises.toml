@@ -187,3 +187,13 @@ focus = "hypertrophy"
 increment = 0
 movement = "core"
 tier = "tertiary"
+
+[lat_pulldown]
+calculation_mode = "static"
+display_name = "Lat Pulldown"
+enabled = true
+equipment = "machine"
+focus = "hypertrophy"
+increment = 10
+movement = "vertical_pull"
+tier = "secondary"
