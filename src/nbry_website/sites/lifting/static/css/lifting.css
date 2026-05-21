@@ -378,15 +378,11 @@ pre {
 .example-codeblock {
   margin: var(--space-md) 0 var(--space-lg);
   padding: var(--space-md) var(--space-lg);
-  border: 1px solid var(--color-border);
-  border-left: 4px solid var(--color-syntax-function);
   border-radius: 4px;
   background: linear-gradient(
     to right,
     var(--color-bg-secondary) 0%,
-    var(--color-bg-secondary) 98%,
-    var(--color-syntax-function) 98%,
-    var(--color-syntax-function) 100%
+    var(--color-bg-secondary) 98%
   );
 }
 
