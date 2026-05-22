@@ -224,20 +224,7 @@ h2 {
   font-size: var(--font-size-sm);
 }
 
-/* Download Resume Button (in header) */
-.header-download {
-  padding: var(--space-xs) var(--space-md);
-  font-size: var(--font-size-sm);
-  white-space: nowrap;
-  background: linear-gradient(135deg, var(--color-syntax-function), var(--color-syntax-tag));
-}
-
-.header-download:hover {
-  background: linear-gradient(135deg, var(--color-syntax-string), var(--color-syntax-function));
-  color: var(--color-bg);
-}
-
-/* Floating Download Resume Button (desktop only) */
+/* Download Resume Button */
 .download-resume {
   position: fixed;
   bottom: var(--space-xl);
@@ -251,6 +238,20 @@ h2 {
   background: linear-gradient(135deg, var(--color-syntax-string), var(--color-syntax-function));
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.6);
+}
+
+/* Mobile Download Button (in hero section) */
+.download-resume-mobile {
+  display: none;
+  margin-top: var(--space-lg);
+  background: linear-gradient(135deg, var(--color-syntax-function), var(--color-syntax-tag));
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.download-resume-mobile:hover {
+  background: linear-gradient(135deg, var(--color-syntax-string), var(--color-syntax-function));
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
 }
 
 /* Responsive Design */
@@ -280,8 +281,13 @@ h2 {
     grid-template-columns: 1fr;
   }
 
-  /* Hide floating download button on mobile — header button covers it */
+  /* Hide floating download button on mobile */
   .download-resume {
     display: none;
+  }
+
+  /* Show mobile download button in hero */
+  .download-resume-mobile {
+    display: inline-block;
   }
 }
