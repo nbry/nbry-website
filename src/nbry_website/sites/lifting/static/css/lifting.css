@@ -70,7 +70,7 @@ h4 {
   padding-left: var(--space-md);
 }
 
-.toc h3 {
+.toc h2 {
   margin-top: 0;
   font-size: 0.85rem;
   margin-bottom: var(--space-md);
@@ -327,6 +327,11 @@ h4 {
   main {
     padding: var(--space-2xl) var(--space-xl);
   }
+}
+
+/* Prose links in main content must be visually distinguishable without relying on color */
+.main-with-toc p a {
+  text-decoration: underline;
 }
 
 /* Desktop: Sidebar and spacing */

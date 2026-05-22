@@ -20,3 +20,4 @@ node_modules/
 
 # Personal directory
 .project/
+.plans/

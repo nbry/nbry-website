@@ -1,5 +1,12 @@
 {% extends "base.html" %}
 
+{% block meta %}
+  <meta
+    name="description"
+    content="A repeatable 5-week powerbuilding program for intermediate lifters. Full-body split with block periodization for strength and aesthetics."
+  />
+{% endblock %}
+
 {% block title %}
   Home - nbry Lifting
 {% endblock %}
@@ -8,7 +15,7 @@
   <div class="page-with-sidebar">
     <aside class="sidebar">
       <nav class="toc">
-        <h3>On this page</h3>
+        <h2>On this page</h2>
         <ul>
           <li><a href="#about">About</a></li>
           <li><a href="#who-is-this-for">Who is this for?</a></li>
@@ -121,7 +128,7 @@
         <a href="/program-guide">program guide</a> for detailed instructions on how to run the
         program.
       </p>
-      <p>To get started immediately, head <a href="/start">here</a>.</p>
+      <p>To get started immediately, <a href="/start">get started here</a>.</p>
     </div>
   </div>
 {% endblock %}
