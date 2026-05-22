@@ -74,31 +74,14 @@
             </text>
           </svg>
         </h1>
-        <label for="nav-toggle" class="nav-label" aria-label="Toggle navigation menu">
-          <svg
-            width="32"
-            height="32"
-            viewBox="0 0 32 32"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M5 8h22M5 16h22M5 24h22"
-              stroke="currentColor"
-              stroke-width="2.5"
-              stroke-linecap="round"
-            />
-          </svg>
-        </label>
+        <a
+          href="{{ url_for('static', path='files/nathaniel-bryant-resume.pdf') }}"
+          class="btn header-download"
+          download
+        >
+          Download Resume
+        </a>
       </div>
-      <input type="checkbox" id="nav-toggle" class="nav-toggle" />
-      <nav aria-label="Main navigation">
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#experience">Experience</a>
-        <a href="#education">Education</a>
-        <a href="#contact">Contact</a>
-      </nav>
     </header>
 
     <main id="main-content">
@@ -127,13 +110,6 @@
             ></span
           >
         </div>
-        <a
-          href="{{ url_for('static', path='files/nathaniel-bryant-resume.pdf') }}"
-          class="btn download-resume-mobile"
-          download
-        >
-          Download Resume
-        </a>
       </section>
 
       <!-- Skills Section -->
