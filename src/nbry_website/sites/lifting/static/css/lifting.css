@@ -330,7 +330,7 @@ h4 {
 }
 
 /* Prose links in main content must be visually distinguishable without relying on color */
-.main-with-toc p a {
+main p a {
   text-decoration: underline;
 }
 
