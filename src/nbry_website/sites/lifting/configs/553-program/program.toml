@@ -1,0 +1,28 @@
+[program]
+calculation_rules = "calculation.toml"
+days_per_week = 3
+description = "5-week block periodized powerbuilding program using a 3-day full body split with 50/50 focus on strength and hypertrophy."
+duration_weeks = 5
+exercise_catalog = "exercises.toml"
+id = "NBRY50P50B5W3D"
+milestones = "milestones.toml"
+name = "553 - 50/50 Powerbuilding 3-Day Program"
+progression_rules = "progression.toml"
+rest_rules = "rest.toml"
+rounding_rules = "rounding.toml"
+unit_system = "imperial"
+
+[[program.blocks]]
+file = "blocks/accumulation.toml"
+name = "accumulation"
+weeks = [1, 2]
+
+[[program.blocks]]
+file = "blocks/intensification.toml"
+name = "intensification"
+weeks = [3, 4]
+
+[[program.blocks]]
+file = "blocks/deload.toml"
+name = "deload"
+weeks = [5]

@@ -1,0 +1,28 @@
+[program]
+calculation_rules = "calculation.toml"
+days_per_week = 4
+description = "5-week block periodized powerbuilding program using a 4-day full body split with 70/30 focus on strength and hypertrophy."
+duration_weeks = 5
+exercise_catalog = "exercises.toml"
+id = "NBRY70P30B5W4D"
+milestones = "milestones.toml"
+name = "734 - 70/30 Powerbuilding 4-Day Program"
+progression_rules = "progression.toml"
+rest_rules = "rest.toml"
+rounding_rules = "rounding.toml"
+unit_system = "imperial"
+
+[[program.blocks]]
+file = "blocks/accumulation.toml"
+name = "accumulation"
+weeks = [1, 2]
+
+[[program.blocks]]
+file = "blocks/intensification.toml"
+name = "intensification"
+weeks = [3, 4]
+
+[[program.blocks]]
+file = "blocks/deload.toml"
+name = "deload"
+weeks = [5]
