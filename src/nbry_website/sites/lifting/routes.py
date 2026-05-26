@@ -67,8 +67,8 @@ async def program_guide(request: Request):
     )
 
 
-@router.get("/3-day-program", response_class=HTMLResponse)
-async def three_day_program(request: Request):
+@router.get("/553-program", response_class=HTMLResponse)
+async def program_553(request: Request):
     """553 program workout schedule."""
     program = _load_program("553-program")
     return templates.TemplateResponse(
@@ -78,8 +78,8 @@ async def three_day_program(request: Request):
     )
 
 
-@router.get("/4-day-program", response_class=HTMLResponse)
-async def four_day_program(request: Request):
+@router.get("/734-program", response_class=HTMLResponse)
+async def program_734(request: Request):
     """734 program workout schedule."""
     program = _load_program("734-program")
     return templates.TemplateResponse(
