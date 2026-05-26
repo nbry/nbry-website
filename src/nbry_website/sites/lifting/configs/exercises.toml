@@ -188,6 +188,26 @@ increment = 0
 movement = "core"
 tier = "tertiary"
 
+[seated_db_shoulder_press]
+calculation_mode = "static"
+display_name = "DB Shoulder Press"
+enabled = true
+equipment = "dumbbell"
+focus = "hypertrophy"
+increment = 5
+movement = "vertical_press"
+tier = "secondary"
+
+[bulgarian_split_squat]
+calculation_mode = "static"
+display_name = "Bulgarian Split Squat"
+enabled = true
+equipment = "dumbbell"
+focus = "hypertrophy"
+increment = 5
+movement = "squat"
+tier = "secondary"
+
 [lat_pulldown]
 calculation_mode = "static"
 display_name = "Lat Pulldown"

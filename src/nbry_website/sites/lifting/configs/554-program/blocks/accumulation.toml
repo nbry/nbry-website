@@ -1,4 +1,4 @@
-name = "Intensification"
+name = "Accumulation"
 
 [[days]]
 name = "Day 1"
@@ -11,19 +11,17 @@ sets = 3
 [[days.exercises]]
 exercise = "squat"
 sets = [
-  {reps = 5, tune = 0.75},
-  {reps = 5, tune = 0.75},
-  {reps = 5, tune = 0.75},
-  {reps = 5, tune = 0.75},
+  {reps = 8, tune = 0.67},
+  {reps = 8, tune = 0.67},
+  {reps = 8, tune = 0.67},
 ]
 
 [[days.exercises]]
 exercise = "incline_barbell_bench"
 sets = [
-  {reps = 5, tune = 0.75},
-  {reps = 5, tune = 0.75},
-  {reps = 5, tune = 0.75},
-  {reps = 5, tune = 0.75},
+  {reps = 8, tune = 0.67},
+  {reps = 8, tune = 0.67},
+  {reps = 8, tune = 0.67},
 ]
 
 [[days.exercises]]
@@ -50,15 +48,6 @@ sets = 2
 name = "Day 2"
 
 [[days.exercises]]
-exercise = "bench"
-sets = [
-  {reps = 3, tune = 0.87},
-  {reps = 3, tune = 0.80},
-  {reps = 3, tune = 0.80},
-  {reps = 3, tune = 0.80},
-]
-
-[[days.exercises]]
 exercise = "seated_db_shoulder_press"
 rep_range = [8, 12]
 sets = 3
@@ -71,6 +60,11 @@ sets = 3
 [[days.exercises]]
 exercise = "lateral_raise"
 rep_range = [12, 15]
+sets = 3
+
+[[days.exercises]]
+exercise = "bulgarian_split_squat"
+rep_range = [8, 10]
 sets = 3
 
 [[days.exercises]]
@@ -97,27 +91,25 @@ rep_range = [6, 12]
 sets = 3
 
 [[days.exercises]]
-exercise = "incline_barbell_bench"
+exercise = "bench"
 sets = [
-  {reps = 5, tune = 0.77},
-  {reps = 5, tune = 0.77},
-  {reps = 5, tune = 0.77},
-  {reps = 5, tune = 0.77},
+  {reps = 5, tune = 0.80},
+  {reps = 5, tune = 0.72},
+  {reps = 5, tune = 0.72},
+  {reps = 5, tune = 0.72},
 ]
 
 [[days.exercises]]
-exercise = "squat"
-sets = [
-  {reps = 3, tune = 0.85},
-  {reps = 3, tune = 0.80},
-  {reps = 3, tune = 0.80},
-]
+exercise = "seated_db_shoulder_press"
+rep_range = [8, 12]
+sets = 3
 
 [[days.exercises]]
-exercise = "rdl"
+exercise = "deadlift"
 sets = [
-  {reps = 6, tune = 0.55},
-  {reps = 6, tune = 0.55},
+  {reps = 5, tune = 0.72},
+  {reps = 5, tune = 0.72},
+  {reps = 5, tune = 0.72},
 ]
 
 [[days.exercises]]
@@ -133,4 +125,50 @@ sets = 2
 [[days.exercises]]
 exercise = "calf_raise"
 rep_range = [12, 15]
+sets = 2
+
+[[days]]
+name = "Day 4"
+
+[[days.exercises]]
+exercise = "squat"
+sets = [
+  {reps = 6, tune = 0.77},
+  {reps = 6, tune = 0.72},
+  {reps = 6, tune = 0.72},
+]
+
+[[days.exercises]]
+exercise = "incline_barbell_bench"
+sets = [
+  {reps = 8, tune = 0.70},
+  {reps = 8, tune = 0.70},
+  {reps = 8, tune = 0.70},
+]
+
+[[days.exercises]]
+exercise = "rdl"
+sets = [
+  {reps = 8, tune = 0.52},
+  {reps = 8, tune = 0.52},
+]
+
+[[days.exercises]]
+exercise = "db_row"
+rep_range = [8, 12]
+sets = 3
+
+[[days.exercises]]
+exercise = "lateral_raise"
+rep_range = [12, 15]
+sets = 2
+
+[[days.exercises]]
+exercise = "lying_db_curl"
+rep_range = [10, 12]
+sets = 2
+
+[[days.exercises]]
+exercise = "reverse_crunch"
+rep_range = [15, 20]
 sets = 2
