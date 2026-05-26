@@ -4,8 +4,8 @@ name = "Accumulation"
 name = "Day 1"
 
 [[days.exercises]]
-exercise = "pullups"
-rep_range = [6, 12]
+exercise = "lat_pulldown"
+rep_range = [8, 12]
 sets = 3
 
 [[days.exercises]]

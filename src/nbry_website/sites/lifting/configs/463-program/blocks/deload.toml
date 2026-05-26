@@ -4,9 +4,9 @@ name = "Deload"
 name = "Day 1"
 
 [[days.exercises]]
-exercise = "pullups"
-rep_range = [6, 10]
-sets = 2
+exercise = "lat_pulldown"
+rep_range = [8, 12]
+sets = 3
 
 [[days.exercises]]
 exercise = "bulgarian_split_squat"
