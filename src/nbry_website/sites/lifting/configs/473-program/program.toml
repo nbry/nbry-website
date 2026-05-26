@@ -1,12 +1,12 @@
 [program]
 calculation_rules = "calculation.toml"
 days_per_week = 4
-description = "5-week block periodized powerbuilding program using a 4-day full body split with 50/50 focus on strength and hypertrophy."
+description = "5-week block periodized powerbuilding program using a 4-day full body split with 70/30 focus on strength and hypertrophy."
 duration_weeks = 5
 exercise_catalog = "exercises.toml"
-id = "NBRY50P50B5W4D"
+id = "NBRY70P30B5W4D"
 milestones = "milestones.toml"
-name = "554 - 50/50 Powerbuilding 4-Day Program"
+name = "473 - 70/30 Powerbuilding 4-Day Program"
 progression_rules = "progression.toml"
 rest_rules = "rest.toml"
 rounding_rules = "rounding.toml"

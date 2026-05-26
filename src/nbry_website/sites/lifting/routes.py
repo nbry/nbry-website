@@ -67,10 +67,10 @@ async def program_guide(request: Request):
     )
 
 
-@router.get("/553-program", response_class=HTMLResponse)
-async def program_553(request: Request):
-    """553 program workout schedule."""
-    program = _load_program("553-program")
+@router.get("/355-program", response_class=HTMLResponse)
+async def program_355(request: Request):
+    """355 program workout schedule."""
+    program = _load_program("355-program")
     return templates.TemplateResponse(
         request=request,
         name="program.html",
@@ -78,10 +78,10 @@ async def program_553(request: Request):
     )
 
 
-@router.get("/734-program", response_class=HTMLResponse)
-async def program_734(request: Request):
-    """734 program workout schedule."""
-    program = _load_program("734-program")
+@router.get("/473-program", response_class=HTMLResponse)
+async def program_473(request: Request):
+    """473 program workout schedule."""
+    program = _load_program("473-program")
     return templates.TemplateResponse(
         request=request,
         name="program.html",
@@ -89,10 +89,10 @@ async def program_734(request: Request):
     )
 
 
-@router.get("/463-program", response_class=HTMLResponse)
-async def program_463(request: Request):
-    """463 program workout schedule."""
-    program = _load_program("463-program")
+@router.get("/346-program", response_class=HTMLResponse)
+async def program_346(request: Request):
+    """346 program workout schedule."""
+    program = _load_program("346-program")
     return templates.TemplateResponse(
         request=request,
         name="program.html",
@@ -100,10 +100,10 @@ async def program_463(request: Request):
     )
 
 
-@router.get("/554-program", response_class=HTMLResponse)
-async def program_554(request: Request):
-    """554 program workout schedule."""
-    program = _load_program("554-program")
+@router.get("/455-program", response_class=HTMLResponse)
+async def program_455(request: Request):
+    """455 program workout schedule."""
+    program = _load_program("455-program")
     return templates.TemplateResponse(
         request=request,
         name="program.html",
