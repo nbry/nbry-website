@@ -4,7 +4,7 @@ from typing import Any
 
 
 def format_sets_display(exercise: dict[str, Any]) -> str:
-    """Format an exercise's sets as 'N×M' or 'N × min–max'."""
+    """Format an exercise's sets as 'N×M', 'N × min–max', or '1×M, N×M' for top+backoff."""
     sets = exercise.get("sets")
     if isinstance(sets, int):
         rep_range = exercise.get("rep_range", [])
@@ -12,6 +12,8 @@ def format_sets_display(exercise: dict[str, Any]) -> str:
             return f"{sets} × {rep_range[0]}–{rep_range[1]}"
         return f"{sets} sets"
     reps = sets[0]["reps"]
+    if len(sets) > 1 and sets[0]["tune"] != sets[1]["tune"]:
+        return f"1×{reps}, {len(sets) - 1}×{reps}"
     return f"{len(sets)}×{reps}"
 
 
