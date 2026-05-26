@@ -224,6 +224,75 @@ h2 {
   font-size: var(--font-size-sm);
 }
 
+/* Projects Section */
+.project-card {
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-top: 3px solid var(--color-syntax-lavender);
+  border-radius: 4px;
+  padding: var(--space-lg);
+  margin-top: var(--space-lg);
+  transition: border-color var(--transition-base);
+}
+
+.project-card:hover {
+  border-color: var(--color-syntax-lavender);
+}
+
+.project-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--space-md);
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.project-title {
+  color: var(--color-syntax-function);
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--space-xs);
+}
+
+.project-subtitle {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  margin: 0;
+}
+
+.project-link {
+  color: var(--color-syntax-lavender);
+  font-size: var(--font-size-sm);
+  white-space: nowrap;
+  border: 1px solid var(--color-syntax-lavender);
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: 4px;
+  transition:
+    background-color var(--transition-base),
+    color var(--transition-base);
+}
+
+.project-link:hover {
+  background-color: var(--color-syntax-lavender);
+  color: var(--color-bg);
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  margin-top: var(--space-md);
+}
+
+.project-tag {
+  background-color: var(--color-bg-tertiary);
+  color: var(--color-syntax-attr);
+  border: 1px solid var(--color-border);
+  padding: 0.125rem var(--space-sm);
+  border-radius: 3px;
+  font-size: var(--font-size-sm);
+}
+
 /* Download Resume Button */
 .download-resume {
   position: fixed;
