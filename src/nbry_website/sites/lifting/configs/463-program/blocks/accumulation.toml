@@ -9,12 +9,9 @@ rep_range = [6, 12]
 sets = 3
 
 [[days.exercises]]
-exercise = "squat"
-sets = [
-  {reps = 8, tune = 0.67},
-  {reps = 8, tune = 0.67},
-  {reps = 8, tune = 0.67},
-]
+exercise = "bulgarian_split_squat"
+rep_range = [8, 10]
+sets = 3
 
 [[days.exercises]]
 exercise = "incline_barbell_bench"
