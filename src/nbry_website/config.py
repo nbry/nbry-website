@@ -19,12 +19,6 @@ class SiteSettings(BaseSettings):
     # Environment
     site_mode: SiteMode = SiteMode.DEVELOPMENT
 
-    # Database
-    database_url: str = "postgresql://postgres:postgres@postgres:5432/nbry_website"
-
-    # Redis
-    redis_url: str = "redis://redis:6379/0"
-
     # Domains
     root_domain: str = "nbry.net"
     local_domain: str = "nbry.local"
