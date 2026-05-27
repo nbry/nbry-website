@@ -65,9 +65,9 @@ rep_range = [5, 8]
 [[days.exercises]]
 exercise = "deadlift"
 sets = [
-    { reps = 3, tune = 0.78 },
-    { reps = 3, tune = 0.78 },
-    { reps = 3, tune = 0.78 },
+    { reps = 3, tune = 0.85 },
+    { reps = 3, tune = 0.8 },
+    { reps = 3, tune = 0.8 },
 ]
 
 [[days.exercises]]
