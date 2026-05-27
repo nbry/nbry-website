@@ -208,6 +208,16 @@ increment = 5
 movement = "squat"
 tier = "secondary"
 
+[incline_db_curl]
+calculation_mode = "static"
+display_name = "Incline DB Curl"
+enabled = true
+equipment = "dumbbell"
+focus = "hypertrophy"
+increment = 2.5
+movement = "bicep_accessory"
+tier = "tertiary"
+
 [lat_pulldown]
 calculation_mode = "static"
 display_name = "Lat Pulldown"

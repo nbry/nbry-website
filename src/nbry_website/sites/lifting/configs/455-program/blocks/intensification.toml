@@ -32,7 +32,7 @@ rep_range = [8, 12]
 sets = 3
 
 [[days.exercises]]
-exercise = "lying_db_curl"
+exercise = "incline_db_curl"
 rep_range = [10, 12]
 sets = 2
 
@@ -50,6 +50,13 @@ sets = 2
 name = "Day 2"
 
 [[days.exercises]]
+exercise = "rdl"
+sets = [
+  {reps = 6, tune = 0.55},
+  {reps = 6, tune = 0.55},
+]
+
+[[days.exercises]]
 exercise = "seated_db_shoulder_press"
 rep_range = [8, 12]
 sets = 3
@@ -62,12 +69,7 @@ sets = 3
 [[days.exercises]]
 exercise = "lateral_raise"
 rep_range = [12, 15]
-sets = 3
-
-[[days.exercises]]
-exercise = "bulgarian_split_squat"
-rep_range = [8, 10]
-sets = 3
+sets = 2
 
 [[days.exercises]]
 exercise = "preacher_curl"
@@ -125,8 +127,8 @@ rep_range = [12, 15]
 sets = 2
 
 [[days.exercises]]
-exercise = "calf_raise"
-rep_range = [12, 15]
+exercise = "ab_mat_situp"
+rep_range = [15, 20]
 sets = 2
 
 [[days]]
@@ -150,11 +152,9 @@ sets = [
 ]
 
 [[days.exercises]]
-exercise = "rdl"
-sets = [
-  {reps = 6, tune = 0.55},
-  {reps = 6, tune = 0.55},
-]
+exercise = "calf_raise"
+rep_range = [12, 15]
+sets = 2
 
 [[days.exercises]]
 exercise = "db_row"
@@ -167,7 +167,7 @@ rep_range = [12, 15]
 sets = 2
 
 [[days.exercises]]
-exercise = "lying_db_curl"
+exercise = "incline_db_curl"
 rep_range = [10, 12]
 sets = 2
 
