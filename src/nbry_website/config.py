@@ -57,3 +57,4 @@ class SiteSettings(BaseSettings):
 
         env_file = ".env"
         case_sensitive = False
+        extra = "ignore"
